@@ -17,18 +17,18 @@ namespace AidensWork
 
         void Update()
         {
-            //TEMP FIX. Untill I figure out how to shoot rays from multiple directions in a single statement, this will stick.
-            //I saw someone use an array for the directions, so I'll look into it~
-
             /// <summary>
             /// These statements shoot rays out from the object in 4 directions. If the rays hit the player they activate the BoulderAttack script, else they do nothing.
             /// </summary>
+
+            //This way is more ugly than I wanted. However this allows me to easily call an attack script that just moves the Boulder in the direction it was tripped.
+
             if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hitPoint, RayCastDist))
             {
                 if (hitPoint.collider.tag == "Player")
                 {
                     Debug.Log("Hit Player");
-                    //Call BoulderAttack
+                    //Call BoulderAttackForward
                     //DestroyThisScript
                 }
             }
@@ -38,7 +38,7 @@ namespace AidensWork
                 if (hitPoint.collider.tag == "Player")
                 {
                     Debug.Log("Hit Player");
-                    //Call BoulderAttack
+                    //Call BoulderAttackBackwards
                     //DestroyThisScript
                 }
             }
@@ -48,7 +48,7 @@ namespace AidensWork
                 if (hitPoint.collider.tag == "Player")
                 {
                     Debug.Log("Hit Player");
-                    //Call BoulderAttack
+                    //Call BoulderAttackLeft
                     //DestroyThisScript
                 }
             }
@@ -58,7 +58,7 @@ namespace AidensWork
                 if (hitPoint.collider.tag == "Player")
                 {
                     Debug.Log("Hit Player");
-                    //Call BoulderAttack
+                    //Call BoulderAttackRight
                     //DestroyThisScript
                 }
             }
