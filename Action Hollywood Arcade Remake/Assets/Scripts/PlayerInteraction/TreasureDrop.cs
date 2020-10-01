@@ -10,9 +10,6 @@ namespace AidensWork
     /// It drops the treasure in the direction the player is in. I do this so the treasure won't end up inside a wall.
     /// 
     /// Treasure triggers are scaled to 1.005 on all axis. This is because for some reason the ray doesn't always pick up the trigger.
-    /// 
-    /// **Potential Issue: Player moves down / to the side and the prefab is instantiated diagonally, half in a wall.**
-    /// 
     /// </summary>
     public class TreasureDrop : MonoBehaviour
     {
@@ -22,22 +19,45 @@ namespace AidensWork
         //References the prefab to instantiate
         public GameObject TreasurePrefab;
 
-        //References the distance the prefab will spawn from the player.
-        public float SpawnDistance = 1;
+        //Specifies how many objects will spawn
+        public int AmountToSpawn = 3;
+
+        //Defines the amount of times you can hit the treasure until it breaks
+        public int TreasureDurability = 3;
+
+        //Defines if the treasure is broken or not
+        //public bool isTreasureBroken;
 
         public void TreasureOnRayHit()
         {
-            //When function is called, it will grab the player's last position.
-            //It will also grab the direction the player was last facing (attack direction)
+            //When function is called, it will grab the player's last position
             Vector3 PlayerPosition = PlayerCharacter.transform.position;
-            Vector3 PlayerDirection = PlayerCharacter.transform.forward;
+            //I wrote it out longer so it's easier to read
+            Vector3 SpawnPosition = PlayerPosition;
 
-            Vector3 SpawnPosition = PlayerPosition + PlayerDirection * SpawnDistance;
+            if (TreasureDurability != 0)
+            {
+                for (int i = 0; i < AmountToSpawn; i++)
+                {
+                    //Instantiate Object
+                    Instantiate(TreasurePrefab, SpawnPosition, Quaternion.Euler(0, 0, 0));
 
-            //Instantiate Object
-            Instantiate(TreasurePrefab, SpawnPosition, Quaternion.Euler(0,0,0));
+                    Debug.Log("Treasure Spawned at: " + SpawnPosition);
+                }
+                
+                //Removes durability 
+                TreasureDurability -= 1;
+                Debug.Log("Treasure Now Has " + TreasureDurability + " Durability");
+            }
+            else
+            {
+                //Play Sound?
+                //Play Animation?
+                //Or Spawn Particle System
 
-            Debug.Log("Treasure Spawned at: " + SpawnPosition);
+                //If Durability == 0, destroy the game object.
+                Destroy(gameObject);
+            }
         }
     }
 }

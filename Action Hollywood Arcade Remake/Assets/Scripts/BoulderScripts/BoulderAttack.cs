@@ -11,36 +11,82 @@ namespace AidensWork
         /// When the Boulder Activation script hits a player, it will execute the below function corrosponding to the direction of the player.
         /// This is a more ugly way to do it, but for now it works.
         /// </summary>
-        void BoulderAttackForward()
+
+        Rigidbody BoulderRigidBody;
+        
+        public float speed = 5f;
+
+        public bool isForward;
+        public bool isBackward;
+        public bool isRight;
+        public bool isLeft;
+
+        void Start()
         {
-            //Go Forward
-            //Break on collision
-            //If player do ***
-            //Else do ***
+            BoulderRigidBody = GetComponent<Rigidbody>();
         }
 
-        void BoulderAttackBackward()
+        void Update()
         {
-            //Go Backward
-            //Break on collision
-            //If player do ***
-            //Else do ***
+            if (isForward == true)
+            {
+                //Go Forward
+                BoulderRigidBody.velocity = transform.forward * speed;
+                Debug.Log("Going Forward");
+                //Break on collision
+                //If player do ***
+                //Else do ***
+            }
+
+            if (isBackward == true)
+            {
+                //Go Forward
+                BoulderRigidBody.velocity = -transform.forward * speed;
+                Debug.Log("Going Backward");
+                //Break on collision
+                //If player do ***
+                //Else do ***
+            }
+
+            if (isRight == true)
+            {
+                //Go Forward
+                BoulderRigidBody.velocity = transform.right * speed;
+                Debug.Log("Going Right");
+                //Break on collision
+                //If player do ***
+                //Else do ***
+            }
+
+            if (isLeft == true)
+            {
+                //Go Forward
+                BoulderRigidBody.velocity = -transform.right * speed;
+                Debug.Log("Going Left");
+                //Break on collision
+                //If player do ***
+                //Else do ***
+            }
         }
 
-        void BoulderAttackLeft()
+        public void BoulderAttackForward()
         {
-            //Go Left
-            //Break on collision
-            //If player do ***
-            //Else do ***
+            isForward = true;
         }
 
-        void BoulderAttackRight()
+        public void BoulderAttackBackward()
         {
-            //Go Right
-            //Break on collision
-            //If player do ***
-            //Else do ***
+            isBackward = true;
+        }
+
+        public void BoulderAttackRight()
+        {
+            isRight = true;
+        }
+
+        public void BoulderAttackLeft()
+        {
+            isLeft = true;
         }
     }
 }

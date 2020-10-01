@@ -459,6 +459,40 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 231087726}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &260310847 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8234523449967270255, guid: 398efe04b5e534441bf6d8e75306489d,
+    type: 3}
+  m_PrefabInstance: {fileID: 8234523451020273963}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &260310853
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 260310847}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e305cad0129560429962c705d8794a9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!54 &260310854
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 260310847}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 116
+  m_CollisionDetection: 0
 --- !u!1 &353259096
 GameObject:
   m_ObjectHideFlags: 0
@@ -5867,7 +5901,8 @@ MonoBehaviour:
   PlayerCharacter: {fileID: 1009518147}
   TreasurePrefab: {fileID: 9205185732407499382, guid: af18075a0f6659946be5f4f80cb61e37,
     type: 3}
-  SpawnDistance: 1
+  AmountToSpawn: 3
+  TreasureDurability: 3
 --- !u!64 &1407905149
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -7670,7 +7705,8 @@ MonoBehaviour:
   PlayerCharacter: {fileID: 1009518147}
   TreasurePrefab: {fileID: 9205185732407499382, guid: af18075a0f6659946be5f4f80cb61e37,
     type: 3}
-  SpawnDistance: 1
+  AmountToSpawn: 3
+  TreasureDurability: 3
 --- !u!1 &1912623008
 GameObject:
   m_ObjectHideFlags: 0
@@ -8812,5 +8848,10 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Boulder
       objectReference: {fileID: 0}
+    - target: {fileID: 8585769622442386862, guid: 398efe04b5e534441bf6d8e75306489d,
+        type: 3}
+      propertyPath: BoulderObject
+      value: 
+      objectReference: {fileID: 260310847}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 398efe04b5e534441bf6d8e75306489d, type: 3}

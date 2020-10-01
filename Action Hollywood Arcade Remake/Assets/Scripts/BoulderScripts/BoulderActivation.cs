@@ -12,7 +12,9 @@ namespace AidensWork
     /// </summary>
     public class BoulderActivation : MonoBehaviour
     {
-        private int RayCastDist = 5;
+        public GameObject BoulderObject;
+
+        private int RayCastDist = 6;
         RaycastHit hitPoint;
 
         void Update()
@@ -23,13 +25,16 @@ namespace AidensWork
 
             //This way is more ugly than I wanted. However this allows me to easily call an attack script that just moves the Boulder in the direction it was tripped.
 
+
             if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hitPoint, RayCastDist))
             {
                 if (hitPoint.collider.tag == "Player")
                 {
                     Debug.Log("Hit Player");
                     //Call BoulderAttackForward
-                    //DestroyThisScript
+                    this.GetComponent<BoulderAttack>().BoulderAttackForward();
+
+                    Destroy(this);
                 }
             }
 
@@ -39,17 +44,9 @@ namespace AidensWork
                 {
                     Debug.Log("Hit Player");
                     //Call BoulderAttackBackwards
-                    //DestroyThisScript
-                }
-            }
+                    this.GetComponent<BoulderAttack>().BoulderAttackBackward();
 
-            if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.left), out hitPoint, RayCastDist))
-            {
-                if (hitPoint.collider.tag == "Player")
-                {
-                    Debug.Log("Hit Player");
-                    //Call BoulderAttackLeft
-                    //DestroyThisScript
+                    Destroy(this);
                 }
             }
 
@@ -59,7 +56,21 @@ namespace AidensWork
                 {
                     Debug.Log("Hit Player");
                     //Call BoulderAttackRight
-                    //DestroyThisScript
+                    this.GetComponent<BoulderAttack>().BoulderAttackRight();
+
+                    Destroy(this);
+                }
+            }
+
+            if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.left), out hitPoint, RayCastDist))
+            {
+                if (hitPoint.collider.tag == "Player")
+                {
+                    Debug.Log("Hit Player");
+                    //Call BoulderAttackLeft
+                    this.GetComponent<BoulderAttack>().BoulderAttackLeft();
+
+                    Destroy(this);
                 }
             }
         }
