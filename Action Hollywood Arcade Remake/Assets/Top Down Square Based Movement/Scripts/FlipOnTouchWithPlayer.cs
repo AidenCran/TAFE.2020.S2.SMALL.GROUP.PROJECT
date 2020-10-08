@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using Hoey.Examples;
+using AidensWork;
 
 namespace Hoey.Examples
 {
@@ -53,6 +54,10 @@ namespace Hoey.Examples
                 //it does not do collisions with any of the other objects - like the player and the enemies
                 this.transform.parent.GetComponent<Collider>().isTrigger = true;
                 isRotating = true;
+
+                //This reduces the remaining tiles by 1 every time the player walks over a new one
+                TileTracker.Instance.TilesRemaining -= 1;
+                Debug.Log("There are " + TileTracker.Instance.TilesRemaining + " tiles remaning");
             }
         }
     }
