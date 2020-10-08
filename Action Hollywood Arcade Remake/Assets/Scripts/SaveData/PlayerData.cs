@@ -16,6 +16,6 @@ public class PlayerData
 {
     //Place the player data here. 
     //This data is accessable anywhere through directly referencing the PlayerData script.
-    public string playerName = "default";
-    public int playerScore = 0;
+    public string playerName;
+    public int playerScore;
 }

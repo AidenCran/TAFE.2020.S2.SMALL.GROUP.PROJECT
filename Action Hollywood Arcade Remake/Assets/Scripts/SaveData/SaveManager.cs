@@ -44,7 +44,7 @@ public static class SaveManager
             Debug.Log("Save File Does Not Exist");
         }
 
-        //Debug.Log(fullPath);
+        Debug.Log(fullPath);
 
         return pd;
     }

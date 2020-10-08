@@ -10,10 +10,21 @@ public class SaveInputField : MonoBehaviour
     [SerializeField] PlayerData pd;
     public Text playerNameText;
 
+    public void Start()
+    {
+        Load();
+    }
+
     private void Update()
     {
-        Debug.Log(playerNameText.text);
-        pd.playerName = playerNameText.text;
+        //Debug.Log(playerNameText.text);
+        //pd.playerName = playerNameText.text;
+
+        if (Input.GetKeyDown(KeyCode.Return))
+        {
+            pd = SaveManager.Load();
+            //Debug.Log("Data Loaded");
+        }
     }
 
 
@@ -29,5 +40,15 @@ public class SaveInputField : MonoBehaviour
     public void show()
     {
         ParentReference.SetActive(true);
+    }
+
+    public void Save()
+    {
+        SaveManager.Save(pd);
+    }
+
+    public void Load()
+    {
+        pd = SaveManager.Load();
     }
 }

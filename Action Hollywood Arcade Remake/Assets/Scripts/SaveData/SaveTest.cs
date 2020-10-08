@@ -18,19 +18,19 @@ namespace AidensWork
         //This exposes the PlayerData variables to us
         [SerializeField] PlayerData pd;
 
-        private void Update()
+        public void Update()
         {
-            if (Input.GetKeyDown(KeyCode.Space))
-            {
-                SaveManager.Save(pd);
-                //Debug.Log("Data Saved");
-            }
+            //if (Input.GetKeyDown(KeyCode.Space))
+            //{
+            //    SaveManager.Save(pd);
+            //    //Debug.Log("Data Saved");
+            //}
 
-            if (Input.GetKeyDown(KeyCode.Return))
-            {
-                pd = SaveManager.Load();
-                //Debug.Log("Data Loaded");
-            }
+            //if (Input.GetKeyDown(KeyCode.Return))
+            //{
+            //    pd = SaveManager.Load();
+            //    //Debug.Log("Data Loaded");
+            //}
         }
     }
 }
