@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using AidensWork;
 
 /// <summary>
 /// Author*: Aiden Cran 
@@ -10,22 +11,26 @@
 /// I followed Comp-3's Video on Saving Data
 /// https://www.youtube.com/watch?v=aV2OA4f5ru8
 /// </summary>
-public class SaveTest : MonoBehaviour
+namespace AidensWork
 {
-    public SaveObject so;
-
-    private void Update()
+    public class SaveTest : MonoBehaviour
     {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            SaveManager.Save(so);
-            //Debug.Log("Data Saved");
-        }
+        //This exposes the PlayerData variables to us
+        [SerializeField] PlayerData pd;
 
-        if (Input.GetKeyDown(KeyCode.Return))
+        private void Update()
         {
-            so = SaveManager.Load();
-            //Debug.Log("Data Loaded");
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                SaveManager.Save(pd);
+                //Debug.Log("Data Saved");
+            }
+
+            if (Input.GetKeyDown(KeyCode.Return))
+            {
+                pd = SaveManager.Load();
+                //Debug.Log("Data Loaded");
+            }
         }
     }
 }

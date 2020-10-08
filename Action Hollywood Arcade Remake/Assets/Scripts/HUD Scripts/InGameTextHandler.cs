@@ -16,14 +16,13 @@ namespace AidensWork
         public Text playerScoreText;
         public Text playerNameText;
 
+        //Directly references the PlayerData script
+        public PlayerData pd;
 
         void Start()
         {
-            //References the GameTime Script for the timer
-            PlayerName playerName = HUDScripts.GetComponent<PlayerName>();
-
             //Name only needs to be set once per wake.
-            playerNameText.text = playerName.Name;
+            playerNameText.text = pd.playerName;
         }
 
         void Update()
@@ -31,12 +30,9 @@ namespace AidensWork
             //References the GameTime Script for the timer
             GameTime gameTime = HUDScripts.GetComponent<GameTime>();
 
-            //References the PlayerScore Script for the score
-            PlayerScore playerScore = HUDScripts.GetComponent<PlayerScore>();
-
             //Updates the time and score every frame
-            timeRemainingText.text = ("" + gameTime.timeRemaining);
-            playerScoreText.text = ("Score: " + playerScore.Score);
+            timeRemainingText.text = gameTime.timeRemaining + "";
+            playerScoreText.text = pd.playerScore + "";
         }
     }
 }

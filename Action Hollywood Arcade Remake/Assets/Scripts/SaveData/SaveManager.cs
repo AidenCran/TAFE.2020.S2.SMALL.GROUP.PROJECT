@@ -16,7 +16,7 @@ public static class SaveManager
     public static string directory = "/SaveData/";
     public static string fileName = "playerData.txt";
 
-    public static void Save(SaveObject so)
+    public static void Save(PlayerData pd)
     {
         string dir = Application.persistentDataPath + directory;
 
@@ -25,19 +25,19 @@ public static class SaveManager
             Directory.CreateDirectory(dir);
         }
 
-        string json = JsonUtility.ToJson(so);
+        string json = JsonUtility.ToJson(pd);
         File.WriteAllText(dir + fileName, json);
     }
 
-    public static SaveObject Load()
+    public static PlayerData Load()
     {
         string fullPath = Application.persistentDataPath + directory + fileName;
-        SaveObject so = new SaveObject();
+        PlayerData pd = new PlayerData();
 
         if (File.Exists(fullPath))
         {
             string json = File.ReadAllText(fullPath);
-            so = JsonUtility.FromJson<SaveObject>(json);
+            pd = JsonUtility.FromJson<PlayerData>(json);
         }
         else
         {
@@ -46,6 +46,6 @@ public static class SaveManager
 
         //Debug.Log(fullPath);
 
-        return so;
+        return pd;
     }
 }
