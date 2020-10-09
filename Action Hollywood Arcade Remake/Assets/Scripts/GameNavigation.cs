@@ -18,17 +18,20 @@ namespace AidensWork
     {
         string SceneToLoad;
         //References the PlayerData
-        PlayerData pd;
+        public PlayerData pd;
 
         public void Start()
         {
             //Loads data
-            SaveManager.Load();
+            pd = SaveManager.Load();
         }
         public void ContinueLastSave()
         {
             if (pd.CurrentLevel != "")
             {
+                //Loads data (Again just in case)
+                pd = SaveManager.Load();
+
                 //References the PlayerData for the current level
                 SceneToLoad = pd.CurrentLevel;
 

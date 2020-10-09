@@ -16,10 +16,6 @@ namespace AidensWork
                 timeRemaining -= Time.deltaTime;
                 //timeRemaining = Mathf.Round(timeRemaining * 100.0f) * 0.01f;
             }
-            else
-            {
-                //GameOver
-            }
         }
     }
 }

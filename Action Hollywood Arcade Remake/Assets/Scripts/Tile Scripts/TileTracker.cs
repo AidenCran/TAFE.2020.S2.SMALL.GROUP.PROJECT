@@ -36,7 +36,7 @@ namespace AidensWork
 
         public int TilesRemaining;
         public int TileThreshold = 5;
-        public bool endLevel;
+        public bool lastTiles;
 
         // Start is called before the first frame update
         void Start()
@@ -47,9 +47,9 @@ namespace AidensWork
         // Update is called once per frame
         void Update()
         {
-            if (TilesRemaining < TileThreshold && endLevel == false)
+            if (TilesRemaining < TileThreshold && lastTiles == false)
             {
-                endLevel = true;
+                lastTiles = true;
                 LastTiles();
             }
         }

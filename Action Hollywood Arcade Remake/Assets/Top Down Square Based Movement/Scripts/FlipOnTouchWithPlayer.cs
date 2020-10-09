@@ -40,6 +40,13 @@ namespace Hoey.Examples
             //Once the animation has been complete - destroy this script so it does not keep running
             if (timer > 1)
             {
+                ///This reduces the remaining tiles by 1 every time the player walks over a new one
+                ///I placed it here because it is the last thing that happens before the script is destroyed
+                ///This means it cannot accidentally be called multiple times, which was happening during testing.
+                TileTracker.Instance.TilesRemaining -= 1;
+
+                //Debug.Log("There are " + TileTracker.Instance.TilesRemaining + " tiles remaning");
+
                 Destroy(this);
             }
         }
@@ -54,10 +61,6 @@ namespace Hoey.Examples
                 //it does not do collisions with any of the other objects - like the player and the enemies
                 this.transform.parent.GetComponent<Collider>().isTrigger = true;
                 isRotating = true;
-
-                //This reduces the remaining tiles by 1 every time the player walks over a new one
-                TileTracker.Instance.TilesRemaining -= 1;
-                Debug.Log("There are " + TileTracker.Instance.TilesRemaining + " tiles remaning");
             }
         }
     }
