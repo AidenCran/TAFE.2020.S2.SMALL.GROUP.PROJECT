@@ -396,7 +396,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &200850497
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1971,7 +1971,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: '[Input Field]'
+  m_Text: Enter Username
 --- !u!222 &1282288971
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2843,6 +2843,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 175882d5b2198ea478826eb476af7608, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pd:
+    playerName: 
+    playerScore: 0
+    CurrentLevel: 
+    HighestLevelAchieved: 0
 --- !u!4 &1979333356
 Transform:
   m_ObjectHideFlags: 0
