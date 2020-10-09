@@ -18,4 +18,10 @@ public class PlayerData
     //This data is accessable anywhere through directly referencing the PlayerData script.
     public string playerName;
     public int playerScore;
+
+    //References which level the player left off on.
+    public string CurrentLevel;
+
+    //Keeps track of the highest level the player has gotten to.
+    public int HighestLevelAchieved;
 }

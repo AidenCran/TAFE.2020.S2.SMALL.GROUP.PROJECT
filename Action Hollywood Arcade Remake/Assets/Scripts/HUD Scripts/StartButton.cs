@@ -21,7 +21,7 @@ public class StartButton : MonoBehaviour
     public GameObject StageSelection;
     public GameObject InputField;
 
-    //Used to check whether the path exists
+    ////Used to check whether the path exists
     public static string directory = "/SaveData/";
     public static string fileName = "playerData.txt";
 

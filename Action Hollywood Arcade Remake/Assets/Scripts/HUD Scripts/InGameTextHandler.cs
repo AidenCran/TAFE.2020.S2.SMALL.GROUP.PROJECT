@@ -22,7 +22,7 @@ namespace AidensWork
         void Start()
         {
             //Loads the player's data
-            pd = SaveManager.Load();
+            SaveManager.Load();
 
             //Name only needs to be set once per wake.
             playerNameText.text = pd.playerName;

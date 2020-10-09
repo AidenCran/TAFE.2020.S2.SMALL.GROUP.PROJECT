@@ -12,6 +12,7 @@ public class SaveInputField : MonoBehaviour
 
     public void Start()
     {
+        //On Start loads the data
         Load();
     }
 
