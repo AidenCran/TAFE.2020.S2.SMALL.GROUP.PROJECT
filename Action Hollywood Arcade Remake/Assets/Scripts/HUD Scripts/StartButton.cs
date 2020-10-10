@@ -40,6 +40,12 @@ public class StartButton : MonoBehaviour
         //Checks if the file read anything, and if the file exists
         //If player equals something and the file exists then the scene continues
         //If there's no player name is read, or the path doesn't exist then it creates a path and sets the input field active
+
+        //PROBLEM:
+        //Pd.playername != "" - Should prevent the player from continuing if the string is empty
+        //However this doesn't prevent the player from continuing....
+        //I also tried this - string.IsNullOrEmpty(pd.playerName)
+        //However it still allows the player to continue on, as if they had a built string.
         if (pd.playerName != "" && File.Exists(fullPath))
         {
             //Change Scene

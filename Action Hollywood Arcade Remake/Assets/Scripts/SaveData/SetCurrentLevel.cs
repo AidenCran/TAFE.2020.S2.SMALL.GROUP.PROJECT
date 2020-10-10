@@ -42,11 +42,19 @@ namespace AidensWork
             //References the current scene's index #
             int CurrentSceneIndex = SceneManager.GetActiveScene().buildIndex;
 
+            //We reduce it by 3 to account for the non-level scenes
+            //Ideally this shouldn't be reduced by 3, but by a calculation done with the current scenes etc.
+            //However for now 3 is fine.
+            CurrentSceneIndex -= 3;
+
+            Debug.Log("This Scene Index is " + CurrentSceneIndex);
+            Debug.Log("Current Highest Level = " + pd.HighestLevelAchieved);
+
             //Compares the current scene's index to the highest set scene index
             if (CurrentSceneIndex > pd.HighestLevelAchieved)
             {
                 //If the current scene's index is higher, then the highest is set to the current.
-                CurrentSceneIndex = pd.HighestLevelAchieved;
+                pd.HighestLevelAchieved = CurrentSceneIndex;
                 Debug.Log("New Highest Level = " + pd.HighestLevelAchieved);
             }
 

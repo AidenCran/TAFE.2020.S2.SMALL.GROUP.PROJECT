@@ -14,6 +14,7 @@ namespace AidensWork
     public class WinLoseFunctions : MonoBehaviour
     {
         string SceneToLoad;
+        PlayerData pd;
 
         public void LoseFunction()
         {
@@ -22,6 +23,13 @@ namespace AidensWork
         }
         public void WinFunction()
         {
+            //Loads data
+            pd = SaveManager.Load();
+            //Increases the highest level by 1
+            pd.HighestLevelAchieved += 1;
+
+            SaveManager.Save(pd);
+
             SceneToLoad = "WinScene";
             this.GetComponent<GameNavigation>().ChangeScene(SceneToLoad);
         }
