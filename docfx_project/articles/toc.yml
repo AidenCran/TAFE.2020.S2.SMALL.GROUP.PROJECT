@@ -2,14 +2,26 @@
   href: intro.md
 - name: Saving System
   href: SavingSystem.md
+  items:
+    - name: Save Manager
+      href: SaveManager.md
+      items:
+        - name: Save Data Function
+          href: SaveDataFunction.md
+        - name: Load Data Function
+          href: LoadDataFunction.md
+    - name: Username Input
+      href: UsernameInput.md
+    - name: Player Data
+      href: PlayerData.md
+    - name: Save Level Data
+      href: SaveCurrentLevel.md
+- name: Game Navigation
+  href: GameNavigation.md  
 - name: Boulder Object
   href: BoulderObject.md
-- name: Game Navigation
-  href: GameNavigation.md
 - name: Player Interactions
   href: PlayerInteractions.md
-- name: Username Input
-  href: UsernameInput.md
 - name: Tile Tracker
   href: TileTracker.md
 - name: Water Animation
