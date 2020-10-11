@@ -9,27 +9,25 @@ namespace AidensWork
     /// Author: Aiden Cran
     /// Date: 9/10/2020
     /// 
-    /// Handles the win & lose functions (Scene Change) 
+    /// Handles the win & lose functions (Scene Change + Level Increment Check) 
     /// </summary>
     public class WinLoseFunctions : MonoBehaviour
     {
+        //Just a reference
         string SceneToLoad;
-        PlayerData pd;
-
+        
         public void LoseFunction()
         {
+            //Loads the LoseScene
             SceneToLoad = "LoseScene";
             this.GetComponent<GameNavigation>().ChangeScene(SceneToLoad);
         }
         public void WinFunction()
         {
-            //Loads data
-            pd = SaveManager.Load();
-            //Increases the highest level by 1
-            pd.HighestLevelAchieved += 1;
+            //Calls a function to check if the level increment conditions have been met
+            this.GetComponent<SetCurrentLevel>().IncreaseHighestLevelOnWin();
 
-            SaveManager.Save(pd);
-
+            //Loads the WinScene
             SceneToLoad = "WinScene";
             this.GetComponent<GameNavigation>().ChangeScene(SceneToLoad);
         }

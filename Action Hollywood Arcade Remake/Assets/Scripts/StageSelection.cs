@@ -22,6 +22,7 @@ namespace AidensWork
             //Debug.Log(StageSelectionButtons[0].GetComponentInChildren<LevelID>().thisLevelID);
             
             currentLevelCheck();
+            Debug.Log("Stage Selection Loaded");
         }
 
         public void currentLevelCheck()

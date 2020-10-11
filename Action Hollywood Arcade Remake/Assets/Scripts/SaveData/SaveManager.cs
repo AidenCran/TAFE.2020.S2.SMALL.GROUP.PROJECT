@@ -41,11 +41,11 @@ public static class SaveManager
         }
         else
         {
-            Debug.Log("Save File Does Not Exist");
+            //Debug.Log("Save File Does Not Exist");
             //pd = Save(pd);
         }
 
-        Debug.Log(fullPath);
+        //Debug.Log(fullPath);
 
         return pd;
     }
