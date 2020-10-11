@@ -22,11 +22,11 @@ EditorBuildSettings:
     guid: 9fc0d4010bbf28b4594072e72b8655ab
   - enabled: 1
     path: Assets/Scenes/InGame/Level 2.unity
-    guid: 46e8d9bd52a948945a0bdf7a4cb20fdc
+    guid: abfebc0929008c04bb7a7ba2dcc5d2bf
   - enabled: 1
     path: Assets/Scenes/InGame/Level 3.unity
-    guid: ee249e58106e5de449a1fcb57ba3460b
+    guid: 7bfa0ad01f0ece54ea34ce3175928fb3
   - enabled: 1
     path: Assets/Scenes/InGame/Level 4.unity
-    guid: 587f212416ce74e41998f77a3ef03ce4
+    guid: 85a4abec847183f4a85a89b66723ad22
   m_configObjects: {}
