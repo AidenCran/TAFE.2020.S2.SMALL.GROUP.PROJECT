@@ -12,7 +12,7 @@ namespace AidensWork
     /// Temp Moving Script. Just lets me test the game without dealing with the dumb broken camera movement.
     /// Can walk through walls... and doesn't turn the character...
     /// </summary>
-    public class GridMovement : MonoBehaviour
+    public class TestGridMovement : MonoBehaviour
     {
         private bool isMoving;
         private Vector3 origPos, targetPos;
