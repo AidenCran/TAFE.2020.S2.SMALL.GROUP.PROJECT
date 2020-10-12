@@ -32,17 +32,14 @@ namespace AidensWork
         //This is used in the start function to check if the current level is higher or lower than to highest achieved
         int SceneIndexOffset;
 
-        //Used to prevent the offset calculation from executing more than once
-        bool CalculateOffset;
-
         public void Awake()
         {
-            if (CalculateOffset == false)
-            {
-                //Checks what the index for the first level is
-                FirstLevelIndexOffset();
-                CalculateOffset = true;
-            }
+            //if (CalculateOffset == false)
+            //{
+            //    //Checks what the index for the first level is
+            //    FirstLevelIndexOffset();
+            //    CalculateOffset = true;
+            //}
         }
 
         /// <summary>
@@ -50,43 +47,46 @@ namespace AidensWork
         /// With this offset value, I can automatically account for adding more scenes without messing up the math
         /// This math is used to calculate the highest achieved Level
         /// </summary>
-        public void FirstLevelIndexOffset()
-        {
-            int LevelOneSceneIndex;
-            LevelOneSceneIndex = SceneManager.GetSceneByName("Level 1").buildIndex;
+        //public void FirstLevelIndexOffset()
+        //{
+        //    int LevelOneSceneIndex;
+        //    LevelOneSceneIndex = SceneManager.GetSceneByName("Level 1").buildIndex;
 
-            int TotalScenes;
-            TotalScenes = SceneManager.sceneCountInBuildSettings;
+        //    int TotalScenes;
+        //    TotalScenes = SceneManager.sceneCountInBuildSettings;
 
-            SceneIndexOffset = TotalScenes - LevelOneSceneIndex;
-            Debug.Log("Calcuated Offset = " + SceneIndexOffset);
-        }
+        //    SceneIndexOffset = TotalScenes - LevelOneSceneIndex;
+        //    Debug.Log("Calcuated Offset = " + SceneIndexOffset);
+        //}
 
         public void Start()
         {
             //Loads data
             pd = SaveManager.Load();
 
-            //References the current scene name
-            string currentSceneName = SceneManager.GetActiveScene().name;
+            int LevelOneSceneIndex;
+            LevelOneSceneIndex = SceneManager.GetSceneByName("Level 1").buildIndex;
 
-            //Sets the active scene to the current level
-            pd.CurrentLevel = currentSceneName;
-            Debug.Log("Current Scene = " + currentSceneName);
-
-            //References the current scene's index #
-            int CurrentSceneIndex = SceneManager.GetActiveScene().buildIndex;
-
-            //Automatically adjusts the current scene index to be #1
-            //It accounts for any scenes above Level 1 without needing to be adjusted.
-            CurrentSceneIndex = CurrentSceneIndex - SceneIndexOffset;
-
-            //Compares the current scene's index to the highest set scene index
-            if (CurrentSceneIndex > pd.HighestLevelAchieved)
+            if (pd.CurrentLevelIndex == 0)
             {
-                //If the current scene's index is higher, then the highest is set to the current.
-                pd.HighestLevelAchieved = CurrentSceneIndex;
-                Debug.Log("New Highest Level = " + pd.HighestLevelAchieved);
+                pd.CurrentLevelIndex = LevelOneSceneIndex;
+            }
+            else 
+            {
+                //References the current scene's index #
+                int CurrentSceneIndex = SceneManager.GetActiveScene().buildIndex;
+
+                //Automatically adjusts the current scene index to be #1
+                //It accounts for any scenes above Level 1 without needing to be adjusted.
+                //CurrentSceneIndex = CurrentSceneIndex - SceneIndexOffset;
+
+                //Compares the current scene's index to the highest set scene index
+                if (CurrentSceneIndex > pd.HighestLevelAchieved)
+                {
+                    //If the current scene's index is higher, then the highest is set to the current.
+                    pd.HighestLevelAchieved = CurrentSceneIndex;
+                    Debug.Log("New Highest Level = " + pd.HighestLevelAchieved);
+                }
             }
 
             //Saves the new data
@@ -106,16 +106,16 @@ namespace AidensWork
 
             Debug.Log("Current Index: " + CurrentSceneIndex);
 
-            Debug.Log("Current Offset: " + SceneIndexOffset);
+            //Debug.Log("Current Offset: " + SceneIndexOffset);
 
             //Automatically adjusts the current scene index to be #1
             //It accounts for any scenes above Level 1 without needing to be adjusted.
-            CurrentSceneIndex = CurrentSceneIndex - SceneIndexOffset;
+            //CurrentSceneIndex = CurrentSceneIndex - SceneIndexOffset;
 
-            Debug.Log("New Current Scene Index: " + CurrentSceneIndex);
+            //Debug.Log("New Current Scene Index: " + CurrentSceneIndex);
 
 
-            Debug.Log("IncreaseOnLevelWin Function Called");
+            //Debug.Log("IncreaseOnLevelWin Function Called");
 
             //Compares the current index to the highest current
             //If it is more than or equal to the highest, the player can continue
@@ -127,14 +127,14 @@ namespace AidensWork
                 //Saves the new data
                 SaveManager.Save(pd);
 
-                Debug.Log("Highest Level Increased By 1.");
-                Debug.Log("New Highest Level = " + pd.HighestLevelAchieved);
+                //Debug.Log("Highest Level Increased By 1.");
+                //Debug.Log("New Highest Level = " + pd.HighestLevelAchieved);
             }
             else
             {
-                Debug.Log("Highest Level Not Increased");
-                Debug.Log("This Scene Index is " + CurrentSceneIndex);
-                Debug.Log("Current Highest Level = " + pd.HighestLevelAchieved);
+                //Debug.Log("Highest Level Not Increased");
+                //Debug.Log("This Scene Index is " + CurrentSceneIndex);
+                //Debug.Log("Current Highest Level = " + pd.HighestLevelAchieved);
             }
         }
     }

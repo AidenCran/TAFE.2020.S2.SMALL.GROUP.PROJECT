@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using AidensWork;
 
 namespace AidensWork
@@ -25,18 +26,30 @@ namespace AidensWork
             
             currentLevelCheck();
             Debug.Log("Stage Selection Loaded");
+
         }
 
         public void currentLevelCheck()
         {
+            //Automatically gets the updated Build index
+            //PROBLEM: Returns -1 instead of build index
+            //Temp Fix: Just keeping the current index updated in the player data script
+            //LevelOneSceneIndex = SceneManager.GetSceneByName("Level 1").buildIndex;
+
             //Runs through all levels in the array
             for (int i = 0; i < StageSelectionButtons.Length; i++)
             {
                 //References the correct stage ID
-                int thisLevelID = StageSelectionButtons[i].GetComponentInChildren<LevelID>().thisLevelID;
+                //int thisLevelID = StageSelectionButtons[i].GetComponentInChildren<LevelID>().thisLevelID;
 
+                
+                int thisLevelID = i + pd.LevelOneSceneIndex;
+                //Debug.Log("Level ID = " + thisLevelID);
 
-                if (thisLevelID > pd.HighestLevelAchieved && thisLevelID != 1)
+                StageSelectionButtons[i].GetComponentInChildren<LevelID>().thisLevelID = thisLevelID;
+                //Debug.Log("Button ID = " + StageSelectionButtons[i].GetComponentInChildren<LevelID>().thisLevelID);
+
+                if (thisLevelID > pd.HighestLevelAchieved && thisLevelID != pd.LevelOneSceneIndex)
                 {
                     StageSelectionButtons[i].SetActive(false);
                 }

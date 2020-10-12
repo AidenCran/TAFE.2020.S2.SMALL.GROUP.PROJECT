@@ -17,8 +17,8 @@
 //        PlayerData pd;
 //        public void Start()
 //        {
-//            SaveManager.Save(pd);
 //            pd = SaveManager.Load();
+//            SaveManager.Save(pd);
 //        }
 //    }
 //}

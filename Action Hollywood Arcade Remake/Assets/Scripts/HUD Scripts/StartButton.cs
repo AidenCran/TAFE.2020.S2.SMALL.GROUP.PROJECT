@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using System.IO;
 
 /// <summary>
@@ -21,6 +22,8 @@ public class StartButton : MonoBehaviour
     public GameObject StageSelection;
     public GameObject InputField;
 
+    public GameObject StartButtonReference;
+
     ////Used to check whether the path exists
     public static string directory = "/SaveData/";
     public static string fileName = "playerData.txt";
@@ -36,17 +39,20 @@ public class StartButton : MonoBehaviour
         //States the path to the data file
         string fullPath = Application.persistentDataPath + directory + fileName;
 
+        //Rebuilds file directory incase
+        //SaveManager.Save(pd);
+
+        pd = SaveManager.Load();
+
 
         //Checks if the file read anything, and if the file exists
         //If player equals something and the file exists then the scene continues
         //If there's no player name is read, or the path doesn't exist then it creates a path and sets the input field active
 
-        //PROBLEM:
-        //Pd.playername != "" - Should prevent the player from continuing if the string is empty
-        //However this doesn't prevent the player from continuing....
-        //I also tried this - string.IsNullOrEmpty(pd.playerName)
-        //However it still allows the player to continue on, as if they had a built string.
-        if (pd.playerName != "" && File.Exists(fullPath))
+        //Checking If the username is null and if the file path exists
+        //If both are true, the player can continue
+        //Else the Directory is rebuilt and the player is prompted to set a name
+        if (!string.IsNullOrWhiteSpace(pd.playerName) && File.Exists(fullPath))
         {
             //Change Scene
             StageSelection.SetActive(true);
@@ -54,10 +60,18 @@ public class StartButton : MonoBehaviour
         }
         else
         {
-            //Rebuilds file directory incase
+            //Attempts to rebuild directory
             SaveManager.Save(pd);
             //Allows user to input data
             InputField.SetActive(true);
+            //Prevents player from interacting with the button
+            StartButtonReference.GetComponent<Button>().interactable = false;
         }
+    }
+
+    public void ButtonReselectable()
+    {
+        //Allows the player to interact with the button
+        StartButtonReference.GetComponent<Button>().interactable = true;
     }
 }

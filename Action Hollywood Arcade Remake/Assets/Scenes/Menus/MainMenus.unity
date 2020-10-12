@@ -602,7 +602,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b656796e07d3b1c4898f163d78f2c43e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  thisLevelID: 1
+  thisLevelID: 0
 --- !u!1 &200850496
 GameObject:
   m_ObjectHideFlags: 0
@@ -2314,7 +2314,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b656796e07d3b1c4898f163d78f2c43e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  thisLevelID: 4
+  thisLevelID: 0
 --- !u!1 &1282288968
 GameObject:
   m_ObjectHideFlags: 0
@@ -3618,6 +3618,17 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 121394954}
+        m_MethodName: set_interactable
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
       - m_Target: {fileID: 1979333357}
         m_MethodName: hide
         m_Mode: 1
@@ -3887,7 +3898,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b656796e07d3b1c4898f163d78f2c43e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  thisLevelID: 3
+  thisLevelID: 0
 --- !u!1 &1909804367
 GameObject:
   m_ObjectHideFlags: 0
@@ -4031,7 +4042,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b656796e07d3b1c4898f163d78f2c43e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  thisLevelID: 2
+  thisLevelID: 0
 --- !u!1 &1979333354
 GameObject:
   m_ObjectHideFlags: 0
@@ -4069,6 +4080,8 @@ MonoBehaviour:
     playerName: 
     playerScore: 0
     CurrentLevel: 
+    CurrentLevelIndex: 0
+    LevelOneSceneIndex: 5
     HighestLevelAchieved: 0
 --- !u!4 &1979333356
 Transform:
@@ -4097,10 +4110,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ParentReference: {fileID: 200850496}
+  StartButtonReference: {fileID: 0}
   pd:
     playerName: default
     playerScore: 0
     CurrentLevel: 
+    CurrentLevelIndex: 0
+    LevelOneSceneIndex: 5
     HighestLevelAchieved: 0
   playerNameText: {fileID: 1381884913}
 --- !u!114 &1979333358
@@ -4119,10 +4135,13 @@ MonoBehaviour:
     playerName: 
     playerScore: 0
     CurrentLevel: 
+    CurrentLevelIndex: 0
+    LevelOneSceneIndex: 5
     HighestLevelAchieved: 0
   StartMenu: {fileID: 1575714296}
   StageSelection: {fileID: 1646981417}
   InputField: {fileID: 200850496}
+  StartButtonReference: {fileID: 121394952}
 --- !u!114 &1979333359
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4130,11 +4149,18 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1979333354}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ed093a2985109384d9e77e1b5490489d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pd:
+    playerName: 
+    playerScore: 0
+    CurrentLevel: 
+    CurrentLevelIndex: 0
+    LevelOneSceneIndex: 5
+    HighestLevelAchieved: 5
 --- !u!114 &1979333360
 MonoBehaviour:
   m_ObjectHideFlags: 0

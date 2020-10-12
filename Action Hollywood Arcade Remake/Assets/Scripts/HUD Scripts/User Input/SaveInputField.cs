@@ -5,7 +5,10 @@ using UnityEngine.UI;
 
 public class SaveInputField : MonoBehaviour
 {
+    //Reference to objects
     public GameObject ParentReference;
+    public GameObject StartButtonReference;
+
     //Allows us to reference the player's data, e.g. Name
     [SerializeField] PlayerData pd;
     public Text playerNameText;
@@ -52,4 +55,9 @@ public class SaveInputField : MonoBehaviour
     {
         pd = SaveManager.Load();
     }
+
+    //public void ButtonReselectable()
+    //{
+    //    StartButtonReference.GetComponent<Button>().interactable = true;
+    //}
 }
