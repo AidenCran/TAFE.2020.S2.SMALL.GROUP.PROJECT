@@ -7,9 +7,11 @@ namespace AidensWork
 {
     /// <summary>
     /// Author: Aiden Cran
-    /// Date:
+    /// Date: 10/10/2020
     /// 
-    /// 
+    /// This script simply iterates through all of the Level buttons in the stage selection screen
+    /// If the button ID (Level 1 = 1, Level 2 = 2, etc.) is more than the Highest Level Achieved, and is not Level 1, deactivate it
+    /// This prevents players from opening levels higher than they have access to.
     /// </summary>
     public class StageSelection : MonoBehaviour
     {

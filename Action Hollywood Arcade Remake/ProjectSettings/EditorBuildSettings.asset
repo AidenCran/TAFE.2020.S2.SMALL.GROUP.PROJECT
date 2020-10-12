@@ -18,6 +18,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Menus/ScoreBoardScene.unity
     guid: 7942d844c93bf7f4aade1c1d81cf9423
   - enabled: 1
+    path: Assets/Scenes/Menus/Settings.unity
+    guid: 1eb048c85ef61404c93a63464febe8c3
+  - enabled: 1
     path: Assets/Scenes/InGame/Level 1.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
   - enabled: 1

@@ -27,6 +27,10 @@ namespace AidensWork
     public class SetCurrentLevel : MonoBehaviour
     {
         PlayerData pd;
+        
+        //States how many scenes are not "Level" scenes
+        //This is used in the start function to check if the current level is higher or lower than to highest achieved
+        int SceneIndexOffset;
 
         public void Start()
         {
@@ -43,13 +47,13 @@ namespace AidensWork
             //References the current scene's index #
             int CurrentSceneIndex = SceneManager.GetActiveScene().buildIndex;
 
-            //We reduce it by 3 to account for the non-level scenes
-            //Ideally this shouldn't be reduced by 3, but by a calculation done with the current scenes etc.
-            //However for now 3 is fine.
-            CurrentSceneIndex -= 3;
 
-            //Debug.Log("This Scene Index is " + CurrentSceneIndex);
-            //Debug.Log("Current Highest Level = " + pd.HighestLevelAchieved);
+            //Checks what the index for the first level is
+            FirstLevelIndexOffset();
+
+            //Automatically adjusts the current scene index to be #1
+            //It accounts for any scenes above Level 1 without needing to be adjusted.
+            CurrentSceneIndex -= SceneIndexOffset;
 
             //Compares the current scene's index to the highest set scene index
             if (CurrentSceneIndex > pd.HighestLevelAchieved)
@@ -61,6 +65,17 @@ namespace AidensWork
 
             //Saves the new data
             SaveManager.Save(pd);
+        }
+
+        public void FirstLevelIndexOffset()
+        {
+            int LevelOneSceneIndex;
+            LevelOneSceneIndex = SceneManager.GetSceneByName("Level 1").buildIndex;
+
+            int TotalScenes;
+            TotalScenes = SceneManager.sceneCountInBuildSettings;
+
+            SceneIndexOffset = TotalScenes - LevelOneSceneIndex;
         }
         
         /// <summary>
@@ -74,10 +89,9 @@ namespace AidensWork
             //References the current scene's index #
             int CurrentSceneIndex = SceneManager.GetActiveScene().buildIndex;
 
-            //We reduce it by 3 to account for the non-level scenes
-            //Ideally this shouldn't be reduced by 3, but by a calculation done with the current scenes etc.
-            //However for now 3 is fine.
-            CurrentSceneIndex -= 3;
+            //Automatically adjusts the current scene index to be #1
+            //It accounts for any scenes above Level 1 without needing to be adjusted.
+            CurrentSceneIndex -= SceneIndexOffset;
 
             Debug.Log("IncreaseOnLevelWin Function Called");
 

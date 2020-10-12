@@ -15,21 +15,37 @@ namespace AidensWork
         private int RayCastDist = 10;
         RaycastHit hitPoint;
 
+        //This will assign layers 8 and 10
+        //private int targetLayers = (1 << 8 | 1 << 9);
+        int layer_mask;
+
+        void Start()
+        {
+            layer_mask = LayerMask.GetMask("Player");
+        }
+
         void Update()
         {
             /// <summary>
             /// These statements shoot rays out from the object in 4 directions. If the rays hit the player they activate the BoulderAttack script, else they do nothing.
             /// </summary>
 
-            //This way is way more ugly than I wanted. However this allows me to easily call an attack script that just moves the Boulder in the direction it was tripped.
-            //Plus I don't know how to put mutliple transform directions in 1 statement. I tried an array, but the syntax failed.
+            ForwardRayCast();
 
+            BackRayCast();
 
-            if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hitPoint, RayCastDist))
+            RightRayCast();
+
+            LeftRayCast();
+        }
+
+        void ForwardRayCast()
+        {
+            if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hitPoint, RayCastDist, layer_mask))
             {
-                Debug.DrawRay(transform.position, transform.forward, Color.green);
                 if (hitPoint.collider.tag == "Player")
                 {
+                    Debug.DrawRay(transform.position, transform.forward, Color.green);
                     Debug.Log("Hit Player - Forward");
                     //Call BoulderAttackForward
                     //this.GetComponent<BoulderAttack>().BoulderAttackForward();
@@ -37,11 +53,15 @@ namespace AidensWork
                     //Destroy(this);
                 }
             }
+        }
 
-            if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.back), out hitPoint, RayCastDist))
+        void BackRayCast()
+        {
+            if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.back), out hitPoint, RayCastDist, layer_mask))
             {
                 if (hitPoint.collider.tag == "Player")
                 {
+                    Debug.DrawRay(transform.position, transform.forward, Color.green);
                     Debug.Log("Hit Player - Backward");
                     //Call BoulderAttackBackwards
                     //this.GetComponent<BoulderAttack>().BoulderAttackBackward();
@@ -49,11 +69,15 @@ namespace AidensWork
                     //Destroy(this);
                 }
             }
+        }
 
-            if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.right), out hitPoint, RayCastDist))
+        void RightRayCast()
+        {
+            if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.right), out hitPoint, RayCastDist, layer_mask))
             {
                 if (hitPoint.collider.tag == "Player")
                 {
+                    Debug.DrawRay(transform.position, transform.forward, Color.green);
                     Debug.Log("Hit Player - Right");
                     //Call BoulderAttackRight
                     //this.GetComponent<BoulderAttack>().BoulderAttackRight();
@@ -61,11 +85,15 @@ namespace AidensWork
                     //Destroy(this);
                 }
             }
+        }
 
-            if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.left), out hitPoint, RayCastDist))
+        void LeftRayCast()
+        {
+            if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.left), out hitPoint, RayCastDist, layer_mask))
             {
                 if (hitPoint.collider.tag == "Player")
                 {
+                    Debug.DrawRay(transform.position, transform.forward, Color.green);
                     Debug.Log("Hit Player - Left");
                     //Call BoulderAttackLeft
                     //this.GetComponent<BoulderAttack>().BoulderAttackLeft();
