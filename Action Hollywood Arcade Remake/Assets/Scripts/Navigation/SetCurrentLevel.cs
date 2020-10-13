@@ -34,12 +34,8 @@ namespace AidensWork
 
         public void Awake()
         {
-            //if (CalculateOffset == false)
-            //{
-            //    //Checks what the index for the first level is
-            //    FirstLevelIndexOffset();
-            //    CalculateOffset = true;
-            //}
+            //Checks what the index for the first level is
+            //FirstLevelIndexOffset();
         }
 
         /// <summary>

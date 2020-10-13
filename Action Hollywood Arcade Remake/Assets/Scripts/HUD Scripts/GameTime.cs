@@ -9,9 +9,18 @@ namespace AidensWork
     {
         public float timeRemaining = 90;
 
+        public GameObject WinConditionReference;
+
+        public bool hasWonRef;
+
+        private void Start()
+        {
+            hasWonRef = WinConditionReference.GetComponent<GameOverCondition>().hasWon;
+        }
+
         void Update()
         {
-            if (timeRemaining > 0)
+            if (timeRemaining > 0 && hasWonRef == true)
             {
                 timeRemaining -= Time.deltaTime;
                 //timeRemaining = Mathf.Round(timeRemaining * 100.0f) * 0.01f;

@@ -19,7 +19,7 @@ namespace AidensWork
         {
             if (Input.GetKeyDown(KeyCode.Space))
             {
-                this.GetComponent<WinLoseFunctions>().WinFunction();
+                //this.GetComponent<WinLoseFunctions>().WinFunction();
             }
             if (Input.GetKeyDown(KeyCode.Return))
             {

@@ -22,14 +22,14 @@ namespace AidensWork
             SceneToLoad = "LoseScene";
             this.GetComponent<GameNavigation>().ChangeScene(SceneToLoad);
         }
-        public void WinFunction()
-        {
-            //Calls a function to check if the level increment conditions have been met
-            this.GetComponent<SetCurrentLevel>().IncreaseHighestLevelOnWin();
+        //public void WinFunction()
+        //{
+        //    //Calls a function to check if the level increment conditions have been met
+        //    this.GetComponent<SetCurrentLevel>().IncreaseHighestLevelOnWin();
 
-            //Loads the WinScene
-            SceneToLoad = "WinScene";
-            this.GetComponent<GameNavigation>().ChangeScene(SceneToLoad);
-        }
+        //    //Loads the WinScene
+        //    SceneToLoad = "WinScene";
+        //    this.GetComponent<GameNavigation>().ChangeScene(SceneToLoad);
+        //}
     }
 }

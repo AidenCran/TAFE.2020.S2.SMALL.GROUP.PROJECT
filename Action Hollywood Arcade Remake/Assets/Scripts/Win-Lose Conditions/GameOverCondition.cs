@@ -15,6 +15,10 @@ namespace AidensWork
     {
         public GameObject TimerReference;
 
+        public bool hasWon;
+
+        bool AUTOWIN = true;
+
         public void Update()
         {
             if (TimerReference.GetComponent<GameTime>().timeRemaining == 0)
@@ -23,10 +27,13 @@ namespace AidensWork
                 this.GetComponent<WinLoseFunctions>().LoseFunction();
             }
 
-            if (this.GetComponent<TileTracker>().TilesRemaining == 0)
+            if (this.GetComponent<TileTracker>().TilesRemaining == 0 || Input.GetKeyDown(KeyCode.Space))
             {
                 //Call Game Win Function
-                this.GetComponent<WinLoseFunctions>().WinFunction();
+                hasWon = true;
+                //Calculates the score
+                TimerReference.GetComponent<ScoreCalc>().ScoreCalculation();
+                //this.GetComponent<WinLoseFunctions>().WinFunction();
             }
         }
     }
