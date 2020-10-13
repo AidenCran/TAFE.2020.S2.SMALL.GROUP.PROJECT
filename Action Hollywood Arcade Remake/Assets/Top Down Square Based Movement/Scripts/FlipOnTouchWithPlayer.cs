@@ -60,6 +60,7 @@ namespace Hoey.Examples
                 //Set the parent to the trigger gameobject to also be a trigger so that when it flips
                 //it does not do collisions with any of the other objects - like the player and the enemies
                 this.transform.parent.GetComponent<Collider>().isTrigger = true;
+                this.transform.parent.GetComponent<TileCounter>().isFlipped = true;
                 isRotating = true;
             }
         }

@@ -11,6 +11,7 @@ namespace AidensWork
 {
     public class TileCounter : MonoBehaviour
     {
+        public bool isFlipped;
         public void Start()
         {
             TileTracker.Instance.TilesRemaining += 1;

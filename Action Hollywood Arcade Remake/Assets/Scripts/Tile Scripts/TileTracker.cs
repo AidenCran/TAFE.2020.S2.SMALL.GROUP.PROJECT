@@ -50,14 +50,14 @@ namespace AidensWork
             if (TilesRemaining < TileThreshold && lastTiles == false)
             {
                 lastTiles = true;
-                LastTiles();
+                this.gameObject.GetComponent<LastTiles>().LastTileFunction();
             }
         }
 
-        public void LastTiles()
-        {
-            //Move this method to another script. This script just tracks the tiles.
-            //Another script handles the LastTiles function e.g. changing material of the remaining tiles etc.
-        }
+        //public void LastTiles()
+        //{
+        //    //Move this method to another script. This script just tracks the tiles.
+        //    //Another script handles the LastTiles function e.g. changing material of the remaining tiles etc.
+        //}
     }
 }
