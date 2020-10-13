@@ -7,7 +7,7 @@ namespace AidensWork
 {
     public class GameTime : MonoBehaviour
     {
-        public float timeRemaining = 60;
+        public float timeRemaining = 90;
 
         void Update()
         {

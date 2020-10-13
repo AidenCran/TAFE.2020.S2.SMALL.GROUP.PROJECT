@@ -16,7 +16,7 @@ namespace AidensWork
     /// </summary>
     public class GameNavigation : MonoBehaviour
     {
-        string SceneToLoad;
+        //string SceneToLoad;
         //References the PlayerData
         public PlayerData pd;
 
@@ -25,25 +25,38 @@ namespace AidensWork
             //Loads data
             pd = SaveManager.Load();
         }
-        public void ContinueLastSave()
-        {
-            if (pd.CurrentLevel != "")
-            {
-                //Loads data (Again just in case)
-                pd = SaveManager.Load();
 
-                //References the PlayerData for the current level
-                SceneToLoad = pd.CurrentLevel;
+        
+        ///MOVED TO CONTINUEBUTTON SCRIPT
+        ///WILL DELETE SOON
+        ///IF I REMEMBER!
+        //public void ContinueLastSave()
+        //{
+        //    if (!string.IsNullOrWhiteSpace(pd.CurrentLevel))
+        //    {
+        //        //Loads data (Again just in case)
+        //        pd = SaveManager.Load();
 
-                //Loads the current level when called
-                ChangeScene(SceneToLoad);
+        //        try
+        //        {
+        //            //References the PlayerData for the current level
+        //            SceneToLoad = pd.CurrentLevel;
 
-            }
-            else 
-            {
-                //Exception Error
-            }
-        }
+        //            //Loads the current level when called
+        //            ChangeScene(SceneToLoad);
+        //        }
+        //        catch (NullReferenceException nullError)
+        //        {
+        //            Debug.Log("Null Error. Check pd.Current Level.");
+        //            Debug.LogError("Not Loaded" + nullError.ToString());
+        //        }
+
+        //    }
+        //    else 
+        //    {
+        //        Debug.Log("pd.CurrentLevel is Null / White Space");
+        //    }
+        //}
 
         public void ChangeScene(string SceneToLoad)
         {

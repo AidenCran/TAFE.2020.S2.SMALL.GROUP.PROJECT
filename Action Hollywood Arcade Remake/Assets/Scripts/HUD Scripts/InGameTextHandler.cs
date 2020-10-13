@@ -34,8 +34,8 @@ namespace AidensWork
             GameTime gameTime = HUDScripts.GetComponent<GameTime>();
 
             //Updates the time and score every frame
-            timeRemainingText.text = gameTime.timeRemaining + "";
-            playerScoreText.text = pd.playerScore + "";
+            timeRemainingText.text = "" + gameTime.timeRemaining;
+            playerScoreText.text = "SCORE: " + pd.playerScore;
         }
     }
 }

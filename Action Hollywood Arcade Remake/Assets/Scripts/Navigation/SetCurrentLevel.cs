@@ -30,7 +30,7 @@ namespace AidensWork
         
         //States how many scenes are not "Level" scenes
         //This is used in the start function to check if the current level is higher or lower than to highest achieved
-        int SceneIndexOffset;
+        //int SceneIndexOffset;
 
         public void Awake()
         {
@@ -64,8 +64,10 @@ namespace AidensWork
             //Loads data
             pd = SaveManager.Load();
 
-            int LevelOneSceneIndex;
-            LevelOneSceneIndex = SceneManager.GetSceneByName("Level 1").buildIndex;
+            //This is used to load the last level played.
+            pd.CurrentLevel = SceneManager.GetActiveScene().name;
+
+            int LevelOneSceneIndex = SceneManager.GetSceneByName("Level 1").buildIndex;
 
             if (pd.CurrentLevelIndex == 0)
             {
