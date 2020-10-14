@@ -23,7 +23,7 @@ namespace AidensWork
             }
             if (Input.GetKeyDown(KeyCode.Return))
             {
-                this.GetComponent<WinLoseFunctions>().LoseFunction();
+                //this.GetComponent<WinLoseFunctions>().LoseFunction();
             }
         }
     }

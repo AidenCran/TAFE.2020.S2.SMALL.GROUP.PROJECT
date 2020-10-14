@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using AidensWork;
 
 namespace AidensWork
@@ -15,6 +16,8 @@ namespace AidensWork
     /// </summary>
     public class ScoreCalc : MonoBehaviour
     {
+        PlayerData pd;
+
         public int TotalScoreBonus;
 
         //Total Added Score from Bonus time
@@ -40,13 +43,13 @@ namespace AidensWork
 
         private void Start()
         {
-            
+            pd = SaveManager.Load();
         }
 
         public void ScoreCalculation()
         {
             //References score on win
-            float CurrentTimeLeft = this.gameObject.GetComponent<GameTime>().timeRemaining;
+            float CurrentTimeLeft = 5;//this.gameObject.GetComponent<GameTime>().timeRemaining;
             //Rounds current time to nearest Int
             int CurrentRoundedTime = Mathf.RoundToInt(CurrentTimeLeft);
 
@@ -54,7 +57,7 @@ namespace AidensWork
 
             //Calcs Total Score
             //For Time
-            TimeScoreBonus = CurrentRoundedTime * TimeBonusAmount;
+            TimeScoreBonus = 50 * TimeBonusAmount;
             //For Bricks
             BrickScoreBonus = BrickAmountPickedUp * BrickBonusAmount;
             //For Secrets
@@ -62,6 +65,18 @@ namespace AidensWork
 
             //Total
             TotalScoreBonus = TimeScoreBonus + BrickScoreBonus + SecretBonusAmount;
+
+            //References the current scene's index #
+            int CurrentSceneIndex = SceneManager.GetActiveScene().buildIndex;
+
+            if (CurrentSceneIndex >= pd.HighestLevelAchieved)
+            {
+                //Adds the Total score bonus to the PlayerData file
+                pd.playerScore += TotalScoreBonus;
+            }
+
+            //Saves PlayerScore Data
+            SaveManager.Save(pd);
 
             this.GetComponent<InGameTextHandler>().ScoreScreenAni();
         }

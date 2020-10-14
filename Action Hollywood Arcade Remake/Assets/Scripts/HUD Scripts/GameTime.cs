@@ -7,7 +7,7 @@ namespace AidensWork
 {
     public class GameTime : MonoBehaviour
     {
-        public float timeRemaining = 90;
+        public float timeRemaining = 5;
 
         public GameObject WinConditionReference;
 
@@ -20,7 +20,7 @@ namespace AidensWork
 
         void Update()
         {
-            if (timeRemaining > 0 && hasWonRef == true)
+            if (timeRemaining > 0 && hasWonRef == false)
             {
                 timeRemaining -= Time.deltaTime;
                 //timeRemaining = Mathf.Round(timeRemaining * 100.0f) * 0.01f;

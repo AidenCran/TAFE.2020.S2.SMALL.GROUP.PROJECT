@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using AidensWork;
+using Hoey.Examples;
 
 namespace AidensWork
 {
@@ -14,8 +15,11 @@ namespace AidensWork
         //References the Score Calc script
         public GameObject ScoreCalcReference;
 
-        //
+        //References the score screen 
         public GameObject ScoreScreenRef;
+
+        //References the player character
+        public GameObject PlayerCharacterRef;
 
         //Directly references the PlayerData script
         public PlayerData pd;
@@ -52,6 +56,9 @@ namespace AidensWork
             //Loads the player's data
             pd = SaveManager.Load();
 
+            //Initializes current score as saved score.
+            TotalScore = pd.playerScore;
+
             //Name only needs to be set once per wake.
             playerNameText.text = pd.playerName;
 
@@ -65,11 +72,13 @@ namespace AidensWork
             BrickAmountPickedUp = this.gameObject.GetComponent<ScoreCalc>().BrickAmountPickedUp;
             SecretAmountFound = this.gameObject.GetComponent<ScoreCalc>().SecretAmountFound;
 
-            //References the Total
-            //int TotalScore = this.gameObject.GetComponent<ScoreCalc>().TotalScoreBonus;
-            //int TimeBonus = this.gameObject.GetComponent<ScoreCalc>().TimeScoreBonus;
-            //int BrickBonus = this.gameObject.GetComponent<ScoreCalc>().BrickScoreBonus;
-            //int SecretBonus = this.gameObject.GetComponent<ScoreCalc>().SecretScoreBonus;
+            ///PRETTY SURE DO NOT NEED. WILL DELETE SOON///
+            ///References the Total
+            ///int TotalScore = this.gameObject.GetComponent<ScoreCalc>().TotalScoreBonus;
+            ///int TimeBonus = this.gameObject.GetComponent<ScoreCalc>().TimeScoreBonus;
+            ///int BrickBonus = this.gameObject.GetComponent<ScoreCalc>().BrickScoreBonus;
+            ///int SecretBonus = this.gameObject.GetComponent<ScoreCalc>().SecretScoreBonus;
+            ///PRETTY SURE DO NOT NEED. WILL DELETE SOON///
         }
 
         void Update()
@@ -79,7 +88,7 @@ namespace AidensWork
 
             //Updates the time and score every frame
             timeRemainingText.text = gameTime.timeRemaining.ToString(); ;
-            playerScoreText.text = $"SCORE: {TotalScore + pd.playerScore}" ;
+            playerScoreText.text = $"SCORE: {TotalScore}" ;
 
             ///Below are values for the Score Screen///
 
@@ -90,10 +99,10 @@ namespace AidensWork
 
         public void ScoreScreenAni()
         {
-
+            //Prevents the player from moving
+            PlayerCharacterRef.GetComponent<SimpleGridMovement>().enabled = false;
+            //Activates the score screen
             ScoreScreenRef.SetActive(true);
-
-            //int _AmountOfExtraTime = AmountOfExtraTime;
 
             while (EndCalculatingScore == false)
             {
@@ -108,7 +117,7 @@ namespace AidensWork
                     //I Want to change this to reduce # by seconds
                     AmountOfExtraTime--;
                     TotalScore += 100;
-                    Debug.Log("Extra Time Left: " + AmountOfExtraTime);
+                    //Debug.Log("Extra Time Left: " + AmountOfExtraTime);
                 }
 
                 //Second reduces brick bonus to 0
@@ -116,7 +125,7 @@ namespace AidensWork
                 {
                     BrickAmountPickedUp--;
                     TotalScore += 200;
-                    Debug.Log("Extra Bricks Left: " + BrickAmountPickedUp);
+                    //Debug.Log("Extra Bricks Left: " + BrickAmountPickedUp);
                 }
 
                 //Third and last reduces secret bonus to 0
@@ -124,12 +133,15 @@ namespace AidensWork
                 {
                     SecretAmountFound--;
                     TotalScore += 300;
-                    Debug.Log("Extra Secrets Left: " + SecretAmountFound);
+                    //Debug.Log("Extra Secrets Left: " + SecretAmountFound);
                 }
 
                 if (AmountOfExtraTime == 0 && BrickAmountPickedUp == 0 && SecretAmountFound == 0)
                 {
                     Debug.Log("End of calculation");
+
+                    Debug.Log($"PlayerData Score: {pd.playerScore}");
+
                     EndCalculatingScore = true;
                 }
             }
