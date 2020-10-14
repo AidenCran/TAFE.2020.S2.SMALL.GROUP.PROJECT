@@ -22,8 +22,14 @@
   href: BoulderObject.md
 - name: Player Interactions
   href: PlayerInteractions.md
-- name: Tile Tracker
-  href: TileTracker.md
+  name: Tile Scripts
+  items:
+    - name: Tile Tracker
+      href: TileTracker.md
+    - name: Tile Counter
+      href: TileCounter.md
+    - name: Last Tiles Function
+      href: LastTiles.md
 - name: Water Animation
   href: WaterAnimation.md
 

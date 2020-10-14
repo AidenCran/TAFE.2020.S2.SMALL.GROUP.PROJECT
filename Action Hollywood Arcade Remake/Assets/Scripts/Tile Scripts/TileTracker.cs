@@ -38,12 +38,6 @@ namespace AidensWork
         public int TileThreshold = 5;
         public bool lastTiles;
 
-        // Start is called before the first frame update
-        void Start()
-        {
-
-        }
-
         // Update is called once per frame
         void Update()
         {
@@ -53,11 +47,5 @@ namespace AidensWork
                 this.gameObject.GetComponent<LastTiles>().LastTileFunction();
             }
         }
-
-        //public void LastTiles()
-        //{
-        //    //Move this method to another script. This script just tracks the tiles.
-        //    //Another script handles the LastTiles function e.g. changing material of the remaining tiles etc.
-        //}
     }
 }

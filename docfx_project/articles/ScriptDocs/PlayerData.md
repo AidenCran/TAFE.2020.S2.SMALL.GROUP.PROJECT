@@ -1,4 +1,5 @@
-### PlayerData Script
+PlayerData Script
+=================
 
 The Player Data script holds all the variables that will be saved into the text file.
 

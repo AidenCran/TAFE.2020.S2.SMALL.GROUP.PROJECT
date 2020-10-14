@@ -1,4 +1,5 @@
-### Saving the current level
+Saving the current level
+========================
 
 The "SetCurrentLevel" script does less of saving the contents of a level, and more of saving which level the player is upto. This will be useful so when the player closes the game and reopens it, they will keep their level progress, well a fraction of it. They will need to restart the level, but their total progress will be saved.
 
@@ -34,6 +35,8 @@ The "SetCurrentLevel" script does less of saving the contents of a level, and mo
             SaveManager.Save(pd);
         }
     }
+
+### How it works
 
 The entire script is centered on running once, at start time.
 
