@@ -117,7 +117,6 @@ namespace AidensWork
                     //I Want to change this to reduce # by seconds
                     AmountOfExtraTime--;
                     TotalScore += 100;
-                    //Debug.Log("Extra Time Left: " + AmountOfExtraTime);
                 }
 
                 //Second reduces brick bonus to 0
@@ -125,7 +124,6 @@ namespace AidensWork
                 {
                     BrickAmountPickedUp--;
                     TotalScore += 200;
-                    //Debug.Log("Extra Bricks Left: " + BrickAmountPickedUp);
                 }
 
                 //Third and last reduces secret bonus to 0
@@ -133,14 +131,13 @@ namespace AidensWork
                 {
                     SecretAmountFound--;
                     TotalScore += 300;
-                    //Debug.Log("Extra Secrets Left: " + SecretAmountFound);
                 }
 
                 if (AmountOfExtraTime == 0 && BrickAmountPickedUp == 0 && SecretAmountFound == 0)
                 {
-                    Debug.Log("End of calculation");
+                    //Debug.Log("End of calculation");
 
-                    Debug.Log($"PlayerData Score: {pd.playerScore}");
+                    //Debug.Log($"PlayerData Score: {pd.playerScore}");
 
                     EndCalculatingScore = true;
                 }

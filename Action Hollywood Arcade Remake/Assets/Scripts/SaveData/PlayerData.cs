@@ -23,6 +23,8 @@ public class PlayerData
 
     //References which level the player left off on.
     public string CurrentLevel;
+    //Current Level Index. 
+    //Defaults to 0. This is checked in the SetCurrentLevel script.
     public int CurrentLevelIndex = 0;
 
     ///THIS MUST BE UPDATED IF THE BUILD STRUCTURE CHANGES
@@ -31,6 +33,7 @@ public class PlayerData
 
     //Keeps track of the highest level the player has gotten to.
     //Default is 5. It is 5 because the index of scene 1 is 5.
-    //Refer to Docs or SetCurrentLevel.cs / StageSelection for more
-    public int HighestLevelAchieved = 5;
+    //Refer to Docs or SetCurrentLevel.cs / StageSelection for more.
+    public int HighestLevelAchieved;
+
 }

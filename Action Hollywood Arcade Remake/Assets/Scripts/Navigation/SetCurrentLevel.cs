@@ -26,7 +26,7 @@ namespace AidensWork
     /// </summary>
     public class SetCurrentLevel : MonoBehaviour
     {
-        PlayerData pd;
+        [SerializeField] PlayerData pd;
         
         //States how many scenes are not "Level" scenes
         //This is used in the start function to check if the current level is higher or lower than to highest achieved
@@ -68,6 +68,9 @@ namespace AidensWork
             if (pd.CurrentLevelIndex == 0)
             {
                 pd.CurrentLevelIndex = LevelOneSceneIndex;
+                pd.HighestLevelAchieved = LevelOneSceneIndex;
+
+                Debug.Log($"Level one index: {LevelOneSceneIndex}");
             }
             else 
             {
@@ -99,10 +102,14 @@ namespace AidensWork
         /// </summary>
         public void IncreaseHighestLevelOnWin()
         {
+            //Loads data
+            pd = SaveManager.Load();
+
             //References the current scene's index #
             int CurrentSceneIndex = SceneManager.GetActiveScene().buildIndex;
 
-            Debug.Log("Current Index: " + CurrentSceneIndex);
+            //Debug.Log($"Current Index: {CurrentSceneIndex}");
+            //Debug.Log($"Highest Achieved Index: {pd.HighestLevelAchieved}");
 
             //Debug.Log("Current Offset: " + SceneIndexOffset);
 
@@ -118,21 +125,24 @@ namespace AidensWork
             //Compares the current index to the highest current
             //If it is more than or equal to the highest, the player can continue
             //Else nothing happens
-            if (CurrentSceneIndex >= pd.HighestLevelAchieved)
+            if (CurrentSceneIndex == pd.HighestLevelAchieved)
             {
-                pd.HighestLevelAchieved += 1;
+                pd.HighestLevelAchieved++;
 
                 //Saves the new data
                 SaveManager.Save(pd);
 
-                //Debug.Log("Highest Level Increased By 1.");
-                //Debug.Log("New Highest Level = " + pd.HighestLevelAchieved);
+                //Loads Data
+                pd = SaveManager.Load();
+
+                Debug.Log("Highest Level Increased By 1.");
+                Debug.Log($"New Highest Level = {pd.HighestLevelAchieved}");
             }
             else
             {
-                //Debug.Log("Highest Level Not Increased");
-                //Debug.Log("This Scene Index is " + CurrentSceneIndex);
-                //Debug.Log("Current Highest Level = " + pd.HighestLevelAchieved);
+                Debug.Log("Highest Level Not Increased");
+                Debug.Log($"This Scene Index is {CurrentSceneIndex}");
+                Debug.Log($"Current Highest Level = {pd.HighestLevelAchieved}");
             }
         }
     }

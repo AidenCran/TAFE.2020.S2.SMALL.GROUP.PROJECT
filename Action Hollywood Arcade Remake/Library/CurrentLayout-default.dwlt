@@ -114,7 +114,7 @@ MonoBehaviour:
   m_MinSize: {x: 679, y: 613}
   m_MaxSize: {x: 14002, y: 18063}
   vertical: 1
-  controlID: 158
+  controlID: 173
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -139,7 +139,7 @@ MonoBehaviour:
   m_MinSize: {x: 679, y: 613}
   m_MaxSize: {x: 14002, y: 18063}
   vertical: 0
-  controlID: 159
+  controlID: 174
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -164,7 +164,7 @@ MonoBehaviour:
   m_MinSize: {x: 403, y: 613}
   m_MaxSize: {x: 10001, y: 18063}
   vertical: 1
-  controlID: 160
+  controlID: 20
 --- !u!114 &8
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -189,7 +189,7 @@ MonoBehaviour:
   m_MinSize: {x: 403, y: 342}
   m_MaxSize: {x: 8003, y: 8042}
   vertical: 0
-  controlID: 161
+  controlID: 21
 --- !u!114 &9
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -209,8 +209,8 @@ MonoBehaviour:
     y: 0
     width: 376
     height: 618
-  m_MinSize: {x: 201, y: 221}
-  m_MaxSize: {x: 4001, y: 4021}
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 16}
   m_Panes:
   - {fileID: 16}
@@ -240,7 +240,7 @@ MonoBehaviour:
   m_MinSize: {x: 202, y: 342}
   m_MaxSize: {x: 4002, y: 8042}
   vertical: 1
-  controlID: 162
+  controlID: 92
 --- !u!114 &11
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -288,8 +288,8 @@ MonoBehaviour:
     y: 456
     width: 1154
     height: 162
-  m_MinSize: {x: 102, y: 121}
-  m_MaxSize: {x: 4002, y: 4021}
+  m_MinSize: {x: 100, y: 100}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 19}
   m_Panes:
   - {fileID: 19}
@@ -469,23 +469,23 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: ee430000
+      m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: 60ceffff58fbffff443f0000
+      m_ExpandedIDs: 282dfeff442dfeffa434feff043bfeff6441feff0448feff0c48feff1448feff1c48feff2448feff2c48feff2e96feffa2a2feffacb2feffbcbafeff5ee0feff6c82ffff8882ffff708affff5891ffffec97ffff8c9effff949effff9c9effffa49effffac9effffb49effff10c5ffff22c5ffff9cccffffc8cfffff66e6ffff48fbffffa43f0000c0cd0000dccd00004e2301007c2301001a2401004424010048240100d22f0200
       m_RenameOverlay:
         m_UserAcceptedRename: 0
-        m_Name: 
-        m_OriginalName: 
+        m_Name: InputField
+        m_OriginalName: InputField
         m_EditFieldRect:
           serializedVersion: 2
           x: 0
           y: 0
           width: 0
           height: 0
-        m_UserData: 0
+        m_UserData: 74828
         m_IsWaitingForDelay: 0
         m_IsRenaming: 0
-        m_OriginalEventType: 11
+        m_OriginalEventType: 0
         m_IsRenamingFilename: 0
         m_ClientGUIView: {fileID: 9}
       m_SearchString: 
@@ -531,9 +531,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 458.74237, y: 139.61327, z: -122.375}
+    m_Target: {x: 472.1753, y: 214.27135, z: -232.5}
     speed: 2
-    m_Value: {x: 458.74237, y: 139.61327, z: -122.375}
+    m_Value: {x: 472.1753, y: 214.27135, z: -232.5}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -583,9 +583,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 416.17557
+    m_Target: 319.6403
     speed: 2
-    m_Value: 398.25412
+    m_Value: 319.6403
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -603,8 +603,8 @@ MonoBehaviour:
     m_FarClip: 10000
     m_DynamicClip: 1
     m_OcclusionCulling: 0
-  m_LastSceneViewRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LastSceneViewOrtho: 1
+  m_LastSceneViewRotation: {x: -0.08717229, y: 0.89959055, z: -0.21045254, w: -0.3726226}
+  m_LastSceneViewOrtho: 0
   m_ReplacementShader: {fileID: 0}
   m_ReplacementString: 
   m_SceneVisActive: 1
@@ -701,21 +701,21 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets
+    - Assets/Scenes/InGame
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets
+  - Assets/Scenes/InGame
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\Users\aiden\Documents\GitHub\TAFE.2020.S2.SMALL.GROUP.PROJECT\Action
     Hollywood Arcade Remake
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 18430000
-    m_LastClickedID: 17176
-    m_ExpandedIDs: 0000000018430000344300003843000000ca9a3b
+    scrollPos: {x: 0, y: 79}
+    m_SelectedIDs: 14450000
+    m_LastClickedID: 17684
+    m_ExpandedIDs: 00000000be430000c0430000c2430000044400000c4400001e3402002034020000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -743,7 +743,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 0000000018430000
+    m_ExpandedIDs: 00000000be430000c0430000c2430000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -770,7 +770,7 @@ MonoBehaviour:
   m_ListAreaState:
     m_SelectedInstanceIDs: 
     m_LastClickedInstanceID: 0
-    m_HadKeyboardFocusLastEvent: 0
+    m_HadKeyboardFocusLastEvent: 1
     m_ExpandedInstanceIDs: c6230000e24d00001a3f0000000000005e3d0000c4430000
     m_RenameOverlay:
       m_UserAcceptedRename: 0

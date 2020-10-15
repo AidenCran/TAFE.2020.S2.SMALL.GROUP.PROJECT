@@ -19,11 +19,11 @@ namespace AidensWork
         {
             if (Input.GetKeyDown(KeyCode.Space))
             {
-                //this.GetComponent<WinLoseFunctions>().WinFunction();
+                this.GetComponent<GameOverCondition>().WinFunction();
             }
             if (Input.GetKeyDown(KeyCode.Return))
             {
-                //this.GetComponent<WinLoseFunctions>().LoseFunction();
+                this.GetComponent<GameOverCondition>().LoseFunction();
             }
         }
     }

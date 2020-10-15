@@ -43,13 +43,15 @@ namespace AidensWork
 
         private void Start()
         {
-            pd = SaveManager.Load();
+            
         }
 
         public void ScoreCalculation()
         {
+            pd = SaveManager.Load();
+
             //References score on win
-            float CurrentTimeLeft = 5;//this.gameObject.GetComponent<GameTime>().timeRemaining;
+            float CurrentTimeLeft = this.gameObject.GetComponent<GameTime>().timeRemaining;
             //Rounds current time to nearest Int
             int CurrentRoundedTime = Mathf.RoundToInt(CurrentTimeLeft);
 
