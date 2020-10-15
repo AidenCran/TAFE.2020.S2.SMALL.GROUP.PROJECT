@@ -41,11 +41,6 @@ namespace AidensWork
         //How much bonus is added per 
         private int SecretBonusAmount = 300;
 
-        private void Start()
-        {
-            
-        }
-
         public void ScoreCalculation()
         {
             pd = SaveManager.Load();
@@ -59,7 +54,7 @@ namespace AidensWork
 
             //Calcs Total Score
             //For Time
-            TimeScoreBonus = 50 * TimeBonusAmount;
+            TimeScoreBonus = CurrentRoundedTime * TimeBonusAmount;
             //For Bricks
             BrickScoreBonus = BrickAmountPickedUp * BrickBonusAmount;
             //For Secrets

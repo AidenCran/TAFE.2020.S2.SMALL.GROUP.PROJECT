@@ -16,10 +16,20 @@ namespace AidensWork
     /// </summary>
     public class GameNavigation : MonoBehaviour
     {
+        PlayerData pd;
+
         public void ChangeScene(string SceneToLoad)
         {
             //Changes scene to the specified scene
             SceneManager.LoadSceneAsync(SceneToLoad);
+        }
+
+        public void RestartButton()
+        {
+            pd = SaveManager.Load();
+
+            //Loads last level
+            SceneManager.LoadSceneAsync(pd.CurrentLevel);
         }
 
         public void QuitGame()
