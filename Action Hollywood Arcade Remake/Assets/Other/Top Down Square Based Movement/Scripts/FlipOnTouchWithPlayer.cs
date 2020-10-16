@@ -55,7 +55,7 @@ namespace Hoey.Examples
         {
             //If the object this script is attached to (which has a collider marked as a trigger) hits something 
             //with a tag of "Player" it will start the flip animation by toggling on a boolean
-            if (other.gameObject.CompareTag("Player"))
+            if (other.gameObject.CompareTag("Player") || other.gameObject.CompareTag("Invincible"))
             {
                 //Set the parent to the trigger gameobject to also be a trigger so that when it flips
                 //it does not do collisions with any of the other objects - like the player and the enemies

@@ -7,6 +7,7 @@ TagManager:
   - Boulder
   - Enemy
   - Treasure
+  - Invincible
   layers:
   - Default
   - TransparentFX

@@ -13,19 +13,21 @@ namespace AidensWork
     /// </summary>
     public class EnemyAttack : MonoBehaviour
     {
-        private void Start()
+        //Detects if the player collides with the enemy
+        private void OnTriggerEnter(Collider other)
         {
-            
-        }
-
-        private void Update()
-        {
-            
+            if (other.gameObject.tag == "Player")
+            {
+                onPlayerHit();
+            }
         }
 
         public void onPlayerHit()
         {
             Debug.Log("Hit The Player");
+
+            //Executes playerHit function
+            PlayerLives.Instance.playerHit();
         }
     }
 }

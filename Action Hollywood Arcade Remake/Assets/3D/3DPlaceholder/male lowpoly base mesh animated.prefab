@@ -526,7 +526,6 @@ GameObject:
   - component: {fileID: 2581450593817183718}
   - component: {fileID: 781300806803854970}
   - component: {fileID: 781300806803854969}
-  - component: {fileID: 781300806803854973}
   m_Layer: 0
   m_Name: male lowpoly base mesh animated
   m_TagString: Player
@@ -596,54 +595,20 @@ MonoBehaviour:
   m_GameObject: {fileID: 2775612999501644214}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d5d219f0694f7954cb1dffca6effdca6, type: 3}
+  m_Script: {fileID: 11500000, guid: 01be6da43898c234d8622f2d2d839680, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   movementSpeed: 3
-  allowDiagonals: 0
+  allowDiagonalMovement: 0
   wallLayer:
     serializedVersion: 2
-    m_Bits: 512
+    m_Bits: 0
   OnMove:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 781300806803854973}
-        m_MethodName: ToggleWalk
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   OnIdle:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 781300806803854973}
-        m_MethodName: ToggleIdle
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
---- !u!114 &781300806803854973
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2775612999501644214}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d132ad8bb1ac7eb449d0a367f0781d90, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+      m_Calls: []
 --- !u!1 &3065375791405804559
 GameObject:
   m_ObjectHideFlags: 0

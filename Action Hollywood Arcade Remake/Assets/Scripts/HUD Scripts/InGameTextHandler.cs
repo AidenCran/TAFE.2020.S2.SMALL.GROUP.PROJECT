@@ -51,6 +51,8 @@ namespace AidensWork
 
         public bool EndCalculatingScore;
 
+        //These work in conjunction with the player lives scripts
+
         void Start()
         {
             //Loads the player's data
@@ -83,18 +85,30 @@ namespace AidensWork
 
         void Update()
         {
+            GetCurrentData();
+        }
+
+        void GetCurrentData()
+        {
             //References the GameTime Script for the timer
             GameTime gameTime = HUDScripts.GetComponent<GameTime>();
 
             //Updates the time and score every frame
             timeRemainingText.text = gameTime.timeRemaining.ToString(); ;
-            playerScoreText.text = $"SCORE: {TotalScore}" ;
+            playerScoreText.text = $"SCORE: {TotalScore}";
 
             ///Below are values for the Score Screen///
-
             AmountOfExtraTimeText.text = AmountOfExtraTime.ToString();
             BrickAmountPickedUpText.text = BrickAmountPickedUp.ToString();
             SecretAmountFoundText.text = SecretAmountFound.ToString();
+
+            ///Below are values for the player lives
+            //PlayerLives.Instance.playerLives
+        }
+
+        public void SetCurrentLives()
+        {
+
         }
 
         public void ScoreScreenAni()
