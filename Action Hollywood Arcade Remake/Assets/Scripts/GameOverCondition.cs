@@ -25,8 +25,9 @@ namespace AidensWork
         public void Update()
         {
             if (GameOver == false)
-            {
-                if (TimerReference.GetComponent<GameTime>().timeRemaining <= 0)
+            {   
+                //If time runs out or player is dead. Lose
+                if (TimerReference.GetComponent<GameTime>().timeRemaining <= 0 || PlayerLives.Instance.isPlayerDead == true)
                 {
                     //Stops the loop
                     GameOver = true;
@@ -34,6 +35,7 @@ namespace AidensWork
                     LoseFunction();
                 }
 
+                //If there are no tiles left. Win
                 if (this.GetComponent<TileTracker>().TilesRemaining == 0)
                 {
                     //Stops the loop

@@ -107,14 +107,14 @@ namespace AidensWork
             SecretAmountFoundText.text = SecretAmountFound.ToString();
 
             ///Below are values for the player lives
-
+            //-----
         }
 
         public void SetCurrentLives()
         {
             PlayerLivesRef = PlayerLives.Instance.playerLives;
 
-            //LifeSprites[PlayerLivesRef].gameObject.SetActive(false);
+            LifeSprites[PlayerLivesRef].gameObject.SetActive(false);
         }
 
         public void ScoreScreenAni()

@@ -2,6 +2,8 @@ ScriptsOnlyBuild:
   usedScripts:
     Assembly-CSharp.dll:
     - AidensWork.BoulderActivation
+    - AidensWork.BoulderRoll
+    - AidensWork.BoulderTrigger
     - AidensWork.ChangeResolution
     - AidensWork.ContinueButton
     - AidensWork.DisableLogs
@@ -88,6 +90,8 @@ ScriptsOnlyBuild:
     - Class: 43
       Script: {instanceID: 0}
     - Class: 48
+      Script: {instanceID: 0}
+    - Class: 54
       Script: {instanceID: 0}
     - Class: 64
       Script: {instanceID: 0}
@@ -193,6 +197,10 @@ ScriptsOnlyBuild:
       Script: {instanceID: 14752}
     - Class: 114
       Script: {instanceID: 17016}
+    - Class: 114
+      Script: {instanceID: 31102}
+    - Class: 114
+      Script: {instanceID: 31154}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -238,6 +246,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 48
       Script: {instanceID: 0}
+    - Class: 54
+      Script: {instanceID: 0}
     - Class: 64
       Script: {instanceID: 0}
     - Class: 65
@@ -341,7 +351,11 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 17016}
     - Class: 114
-      Script: {instanceID: 41410}
+      Script: {instanceID: 31102}
+    - Class: 114
+      Script: {instanceID: 31154}
+    - Class: 114
+      Script: {instanceID: 72902}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -387,6 +401,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 48
       Script: {instanceID: 0}
+    - Class: 54
+      Script: {instanceID: 0}
     - Class: 64
       Script: {instanceID: 0}
     - Class: 65
@@ -490,7 +506,11 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 17016}
     - Class: 114
-      Script: {instanceID: 41410}
+      Script: {instanceID: 31102}
+    - Class: 114
+      Script: {instanceID: 31154}
+    - Class: 114
+      Script: {instanceID: 72902}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -536,6 +556,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 48
       Script: {instanceID: 0}
+    - Class: 54
+      Script: {instanceID: 0}
     - Class: 64
       Script: {instanceID: 0}
     - Class: 65
@@ -639,7 +661,11 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 17016}
     - Class: 114
-      Script: {instanceID: 41410}
+      Script: {instanceID: 31102}
+    - Class: 114
+      Script: {instanceID: 31154}
+    - Class: 114
+      Script: {instanceID: 72902}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -1970,6 +1996,18 @@ ScriptsOnlyBuild:
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
     className: PlayableTrack
+  - hash:
+      serializedVersion: 2
+      Hash: f4c89589d6240258177242cc3b90a98c
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: AidensWork
+    className: BoulderTrigger
+  - hash:
+      serializedVersion: 2
+      Hash: a39b79be7abd34fee99fc4671a6e448c
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: AidensWork
+    className: BoulderRoll
   platform: 5
   scenePathNames:
   - Assets/Scenes/Menus/MainMenus.unity

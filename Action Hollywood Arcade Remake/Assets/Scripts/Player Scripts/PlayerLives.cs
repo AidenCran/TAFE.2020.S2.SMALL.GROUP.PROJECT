@@ -57,6 +57,7 @@ namespace AidensWork
 
         private void Start()
         {
+            //References the Mesh Renderer
             playerMesh = PlayerCharacterRef.GetComponentInChildren<SkinnedMeshRenderer>();
         }
 
@@ -137,6 +138,10 @@ namespace AidensWork
             StopCoroutine(IFrames());
         }
 
+        /// <summary>
+        /// Responsible for toggling the player's mesh on / off, allowing the player to see when Invincibility Frames are active
+        /// </summary>
+        /// <returns></returns>
         private IEnumerator TogglePlayer()
         {
             //Time to wait before changing mesh state
