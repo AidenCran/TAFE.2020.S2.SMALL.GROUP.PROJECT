@@ -2321,9 +2321,6 @@ MonoBehaviour:
   PlayerCharacterRef: {fileID: 1009518147}
   isPlayerDead: 0
   playerLives: 0
-  AnimationTime: 3
-  InvinciblityFrames: 5
-  playerMaterial: {fileID: 0}
 --- !u!1 &353259096
 GameObject:
   m_ObjectHideFlags: 0
@@ -6340,7 +6337,7 @@ GameObject:
   - component: {fileID: 753455040}
   - component: {fileID: 753455039}
   m_Layer: 5
-  m_Name: UI Lives (1)
+  m_Name: UI Lives 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8678,7 +8675,7 @@ GameObject:
   - component: {fileID: 910608052}
   - component: {fileID: 910608051}
   m_Layer: 5
-  m_Name: 'UI Lives '
+  m_Name: UI Lives 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -17347,6 +17344,11 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 9
       objectReference: {fileID: 0}
+    - target: {fileID: 708783377439421131, guid: cc656d2e4792f444ea8059e52d11c5fc,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 715364456465197840, guid: cc656d2e4792f444ea8059e52d11c5fc,
         type: 3}
       propertyPath: m_Layer
@@ -17486,6 +17488,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Layer
       value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 3729936594102234476, guid: cc656d2e4792f444ea8059e52d11c5fc,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3748748019492780606, guid: cc656d2e4792f444ea8059e52d11c5fc,
         type: 3}
@@ -19486,7 +19493,7 @@ GameObject:
   - component: {fileID: 1897864779}
   - component: {fileID: 1897864778}
   m_Layer: 5
-  m_Name: UI Lives (2)
+  m_Name: UI Lives 3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -21893,15 +21900,20 @@ MonoBehaviour:
   timeRemainingText: {fileID: 1994316362}
   playerScoreText: {fileID: 431717951}
   playerNameText: {fileID: 901859655}
-  AmountOfExtraTime: 0
-  BrickAmountPickedUp: 0
-  SecretAmountFound: 0
-  TotalScore: 0
   AmountOfExtraTimeText: {fileID: 1977885163}
   BrickAmountPickedUpText: {fileID: 1335219208}
   SecretAmountFoundText: {fileID: 22448918}
   TotalScoreText: {fileID: 431717951}
+  AmountOfExtraTime: 0
+  BrickAmountPickedUp: 0
+  SecretAmountFound: 0
+  TotalScore: 0
   EndCalculatingScore: 0
+  LifeSprites:
+  - {fileID: 910608049}
+  - {fileID: 753455037}
+  - {fileID: 1897864776}
+  PlayerLivesRef: 0
 --- !u!114 &2090171558
 MonoBehaviour:
   m_ObjectHideFlags: 0

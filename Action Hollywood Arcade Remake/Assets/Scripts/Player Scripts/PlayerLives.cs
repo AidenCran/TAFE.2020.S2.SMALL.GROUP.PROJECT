@@ -8,10 +8,10 @@ namespace AidensWork
 {
     /// <summary>
     /// Author: Aiden Cran
-    /// Date:
-    /// Last Edited:
+    /// Date: 16/10/2020
+    /// Last Edited: 17/10/2020
     /// 
-    /// 
+    /// Handles Player Lives, IFrames, Death Checking and calling the HUD scripts to change the Visual aspects (Life Bar)
     /// </summary>
     public class PlayerLives : MonoBehaviour
     {
@@ -36,6 +36,7 @@ namespace AidensWork
 
         #endregion
 
+        //Script References
         public GameObject HUDScriptsRef;
         public GameObject PlayerCharacterRef;
 
@@ -44,16 +45,19 @@ namespace AidensWork
         [Tooltip("Determines how many lives the player has, duh")]
         public int playerLives = 3;
 
-        public float AnimationTime = 3f;
-        public float InvinciblityFrames = 5f;
+        //Variables related to IEnumerators
+        private float AnimationTime = 3f;
+        private float InvinciblityFrames = 5f;
 
-        public Material playerMaterial;
+        //Determines when the player can see they have IFrames
+        private bool ShowInvincibility;
+
+        //References Player Materials
+        private Renderer playerMesh;
 
         private void Start()
         {
-            playerMaterial = PlayerCharacterRef.GetComponent<Material>();
-
-            //playerMaterial.SetColor.
+            playerMesh = PlayerCharacterRef.GetComponentInChildren<SkinnedMeshRenderer>();
         }
 
         private void Update()
@@ -81,7 +85,7 @@ namespace AidensWork
         /// In this time the player is prevented from moving.
         /// </summary>
         /// <returns></returns>
-        IEnumerator playerDeathSequence()
+        private IEnumerator playerDeathSequence()
         {
             //Play death animation
 
@@ -91,35 +95,71 @@ namespace AidensWork
             //Changes the player's tag so he cannot be hit
             PlayerCharacterRef.tag = "Invincible";
 
-            Debug.Log($"Death Sequence Started.");
-            Debug.Log($"Player Is Invincible");
+            Debug.Log("Death Sequence Started.");
+            Debug.Log("Player Is Invincible");
 
             yield return new WaitForSeconds(AnimationTime);
 
-            Debug.Log($"Animation Over");
+            Debug.Log("Animation Over");
 
             //Unfreezes player controls
             PlayerCharacterRef.GetComponent<SimpleGridMovement>().enabled = true;
 
+            //Starts Invincibilty Frames Coroutine
             StartCoroutine(IFrames());
+
+            //Ends this Coroutine
+            StopCoroutine(playerDeathSequence());
         }
 
         /// <summary>
         /// Coroutine giving the player invincibility frames
         /// </summary>
         /// <returns></returns>
-        IEnumerator IFrames()
+        private IEnumerator IFrames()
         {
+            ShowInvincibility = true;
+            
+            //Starts the TogglePlayer Coroutine
+            StartCoroutine(TogglePlayer());
+
             //The player is still invincible
             yield return new WaitForSeconds(InvinciblityFrames);
 
-            Debug.Log($"Invincibility Over");
+            ShowInvincibility = false;
+
+            Debug.Log("Invincibility Over");
 
             //Resets the player's tag, allowing him to get hit again
             PlayerCharacterRef.tag = "Player";
+
+            //Ends this Coroutine
+            StopCoroutine(IFrames());
         }
 
-        void CheckPlayerDeath()
+        private IEnumerator TogglePlayer()
+        {
+            //Time to wait before changing mesh state
+            float TimeToWait = 0.5f;
+
+            while (ShowInvincibility == true)
+            {
+                //Deactivates the mesh renderer
+                playerMesh.enabled = false;
+
+                yield return new WaitForSeconds(TimeToWait);
+
+                //Reactivates the mesh renderer
+                playerMesh.enabled = true;
+
+                yield return new WaitForSeconds(TimeToWait);
+            }
+
+            //If ShowInvincibility is false, end this Coroutine
+            StopCoroutine(TogglePlayer());
+        }
+
+        private void CheckPlayerDeath()
         {
             if (playerLives <= 0)
             {

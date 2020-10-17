@@ -30,15 +30,6 @@ namespace AidensWork
         public Text playerScoreText;
         public Text playerNameText;
 
-
-        //The Below Values are references for the Score Screen
-
-        //Creates reference for each value
-        public int AmountOfExtraTime;
-        public int BrickAmountPickedUp;
-        public int SecretAmountFound;
-        public int TotalScore;
-
         //These connect to the text within' the Score Menu
         public Text AmountOfExtraTimeText;
         public Text BrickAmountPickedUpText;
@@ -49,9 +40,22 @@ namespace AidensWork
         //public Text BrickBonus;
         //public Text SecretBonus;
 
+        //The Below Values are references for the Score Screen
+
+        //Creates reference for each value
+        public int AmountOfExtraTime;
+        public int BrickAmountPickedUp;
+        public int SecretAmountFound;
+        public int TotalScore;
+
+        //Determines when the calculation is finished
         public bool EndCalculatingScore;
 
         //These work in conjunction with the player lives scripts
+        //public GameObject LifeSpriteHolder;
+        public GameObject[] LifeSprites;
+
+        public int PlayerLivesRef = 3;
 
         void Start()
         {
@@ -103,12 +107,14 @@ namespace AidensWork
             SecretAmountFoundText.text = SecretAmountFound.ToString();
 
             ///Below are values for the player lives
-            //PlayerLives.Instance.playerLives
+
         }
 
         public void SetCurrentLives()
         {
+            PlayerLivesRef = PlayerLives.Instance.playerLives;
 
+            //LifeSprites[PlayerLivesRef].gameObject.SetActive(false);
         }
 
         public void ScoreScreenAni()
