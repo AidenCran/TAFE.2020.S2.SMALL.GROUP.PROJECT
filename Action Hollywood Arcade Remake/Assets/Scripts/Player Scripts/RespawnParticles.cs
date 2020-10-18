@@ -26,18 +26,22 @@ namespace AidensWork
         {
             float WaitTime = 3f;
 
+            //Starts Particle System
             DeathParticleRef.Play();
 
+            //Waits 
             yield return new WaitForSeconds(WaitTime);
 
+            //Stops Particle System
             DeathParticleRef.Stop();
 
+            //Continues to respawn Coroutine
             StartCoroutine(RespawnParticleSystem());
         }
 
         public IEnumerator RespawnParticleSystem()
         {
-            float WaitTime = 3f;
+            float WaitTime = 5f;
 
             RespawnParticleRef.Play();
 

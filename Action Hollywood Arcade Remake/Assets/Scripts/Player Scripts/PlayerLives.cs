@@ -99,10 +99,16 @@ namespace AidensWork
             //Calls the death particles function
             PlayerCharacterRef.GetComponent<RespawnParticles>().StartRespawnIEnum();
 
+            //Deactivates the mesh renderer
+            playerMesh.enabled = false;
+
             Debug.Log("Death Sequence Started.");
             Debug.Log("Player Is Invincible");
 
             yield return new WaitForSeconds(AnimationTime);
+
+            //Deactivates the mesh renderer
+            playerMesh.enabled = true;
 
             Debug.Log("Animation Over");
 
