@@ -19,7 +19,7 @@ namespace AidensWork
 
         public int SpawnedAmount = 0;
 
-        private void Awake()
+        private void Start()
         {
             while (SpawnedAmount <= 10)
             {

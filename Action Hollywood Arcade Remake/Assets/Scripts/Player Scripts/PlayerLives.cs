@@ -96,6 +96,9 @@ namespace AidensWork
             //Changes the player's tag so he cannot be hit
             PlayerCharacterRef.tag = "Invincible";
 
+            //Calls the death particles function
+            PlayerCharacterRef.GetComponent<RespawnParticles>().StartRespawnIEnum();
+
             Debug.Log("Death Sequence Started.");
             Debug.Log("Player Is Invincible");
 
