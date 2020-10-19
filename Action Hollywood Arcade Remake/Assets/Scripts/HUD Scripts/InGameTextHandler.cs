@@ -98,13 +98,14 @@ namespace AidensWork
             GameTime gameTime = HUDScripts.GetComponent<GameTime>();
 
             //Updates the time and score every frame
+            //Passing "00000000" into the ToString parameters allows the default to be "00000 etc."
             timeRemainingText.text = gameTime.timeRemaining.ToString(); ;
-            playerScoreText.text = $"SCORE: {TotalScore}";
+            playerScoreText.text = "SCORE: " + TotalScore.ToString("00000000");
 
             ///Below are values for the Score Screen///
-            AmountOfExtraTimeText.text = AmountOfExtraTime.ToString();
-            BrickAmountPickedUpText.text = BrickAmountPickedUp.ToString();
-            SecretAmountFoundText.text = SecretAmountFound.ToString();
+            AmountOfExtraTimeText.text = AmountOfExtraTime.ToString("00");
+            BrickAmountPickedUpText.text = BrickAmountPickedUp.ToString("00");
+            SecretAmountFoundText.text = SecretAmountFound.ToString("00");
 
             ///Below are values for the player lives
             //-----
@@ -138,6 +139,10 @@ namespace AidensWork
                     AmountOfExtraTime--;
                     TotalScore += 100;
                 }
+
+
+
+
 
                 //Second reduces brick bonus to 0
                 for (int i = 0; i < BrickAmountPickedUp; i++)

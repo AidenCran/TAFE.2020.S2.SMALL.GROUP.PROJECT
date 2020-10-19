@@ -15,16 +15,9 @@ namespace AidensWork
         private int RayCastDist = 5;
         RaycastHit hitPoint;
 
-        //This will assign layers 8 and 10
-        //private int targetLayers = (1 << 8 | 1 << 9);
-        int layer_mask;
+        public LayerMask layer_mask;
 
-        void Start()
-        {
-            layer_mask = LayerMask.GetMask("Player");
-        }
-
-        void Update()
+        void FixedUpdate()
         {
             /// <summary>
             /// These statements shoot rays out from the object in 4 directions. If the rays hit the player they activate the BoulderAttack script, else they do nothing.
@@ -41,16 +34,18 @@ namespace AidensWork
 
         void ForwardRayCast()
         {
-            if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hitPoint, RayCastDist, layer_mask))
+            Debug.DrawRay(transform.position, transform.forward * RayCastDist, Color.green);
+            if (Physics.Raycast(transform.position, transform.forward, out hitPoint, RayCastDist, layer_mask))
             {
+                //Debug.Log(hitPoint.transform.tag);
+
                 if (hitPoint.collider.tag == "Player")
-                {
-                    Debug.DrawRay(transform.position, transform.forward, Color.green);
+                { 
                     Debug.Log("Hit Player - Forward");
                     //Call BoulderAttackForward
-                    //this.GetComponent<BoulderAttack>().BoulderAttackForward();
+                    this.GetComponent<BoulderAttack>().BoulderAttackForward();
 
-                    //Destroy(this);
+                    Destroy(this);
                 }
             }
         }

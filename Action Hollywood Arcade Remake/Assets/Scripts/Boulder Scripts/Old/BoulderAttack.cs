@@ -13,8 +13,10 @@ namespace AidensWork
         /// </summary>
 
         Rigidbody BoulderRigidBody;
+
+        public LayerMask wallLayer;
         
-        public float speed = 5f;
+        public float speed = 2f;
 
         public bool isForward;
         public bool isBackward;
@@ -23,7 +25,7 @@ namespace AidensWork
 
         void Start()
         {
-            BoulderRigidBody = GetComponent<Rigidbody>();
+            BoulderRigidBody = this.GetComponent<Rigidbody>();
         }
 
         void Update()
@@ -36,6 +38,12 @@ namespace AidensWork
                 //Break on collision
                 //If player do ***
                 //Else do ***
+
+                //Checks if there's a wall 1m forward
+                if (Physics.Raycast(this.transform.position, this.transform.forward, 1f, wallLayer))
+                {
+                    StartCoroutine(BreakAni());
+                }
             }
 
             if (isBackward == true)
@@ -68,7 +76,27 @@ namespace AidensWork
                 //Else do ***
             }
         }
+        private IEnumerator BreakAni()
+        {
+            float WaitTime = 2f;
 
+            //Stops the object from moving
+            speed = 0;
+
+            //Break Animation / Particles
+            Debug.Log("Oh no... Im breaking.. So sad /s");
+
+            //Waits 2 seconds
+            yield return new WaitForSeconds(WaitTime);
+
+            //Destroys gameobject
+            Destroy(gameObject);
+        }
+
+        
+        /// <summary>
+        /// These functions define which direction the boulder rolls
+        /// </summary>
         public void BoulderAttackForward()
         {
             isForward = true;

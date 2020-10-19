@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using AidensWork;
+using System;
 
 namespace AidensWork
 {
@@ -18,6 +19,8 @@ namespace AidensWork
         public float speed = 1f;
 
         [SerializeField] private LayerMask wallLayer;
+        
+        
 
         void Start()
         {
@@ -48,7 +51,7 @@ namespace AidensWork
 
         private IEnumerator BreakAni()
         {
-            float WaitTime = 1.5f;
+            float WaitTime = 2f;
 
             //Stops the object from moving
             speed = 0;
