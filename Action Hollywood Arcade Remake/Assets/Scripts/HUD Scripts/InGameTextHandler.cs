@@ -99,7 +99,7 @@ namespace AidensWork
 
             //Updates the time and score every frame
             //Passing "00000000" into the ToString parameters allows the default to be "00000 etc."
-            timeRemainingText.text = gameTime.timeRemaining.ToString(); ;
+            timeRemainingText.text = gameTime.timeRemaining.ToString("00"); ;
             playerScoreText.text = "SCORE: " + TotalScore.ToString("00000000");
 
             ///Below are values for the Score Screen///

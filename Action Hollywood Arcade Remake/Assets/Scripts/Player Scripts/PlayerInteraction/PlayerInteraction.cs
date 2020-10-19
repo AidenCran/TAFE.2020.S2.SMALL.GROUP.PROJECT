@@ -33,7 +33,11 @@ namespace AidensWork
                     if (hitPoint.collider.tag == "Enemy")
                     {
                         Debug.Log("Hit Enemy");
-                        //Call PlayerAttack
+
+                        //Destroys enemy gameobject.
+                        Destroy(hitPoint.collider.gameObject);
+
+                        //Increase Score
                     }
 
                     //Checks if collider is treasure

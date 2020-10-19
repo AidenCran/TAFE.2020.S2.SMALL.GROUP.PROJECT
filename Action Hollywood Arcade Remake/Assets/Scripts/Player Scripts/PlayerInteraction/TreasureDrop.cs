@@ -25,15 +25,12 @@ namespace AidensWork
         //Defines the amount of times you can hit the treasure until it breaks
         public int TreasureDurability = 3;
 
-        //Defines if the treasure is broken or not
-        //public bool isTreasureBroken;
-
         public void TreasureOnRayHit()
         {
             //When function is called, it will grab the player's last position
-            Vector3 PlayerPosition = PlayerCharacter.transform.position;
-            //I wrote it out longer so it's easier to read
-            Vector3 SpawnPosition = PlayerPosition;
+            Vector3 SpawnPosition = PlayerCharacter.transform.position;
+
+            SpawnPosition.y += Random.Range(1,2);
 
             if (TreasureDurability != 0)
             {
