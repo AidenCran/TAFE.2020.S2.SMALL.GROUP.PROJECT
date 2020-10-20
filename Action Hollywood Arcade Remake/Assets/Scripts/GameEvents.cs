@@ -9,9 +9,10 @@ namespace AidensWork
 {
     /// <summary>
     /// Author: Aiden Cran
-    /// Date:
+    /// Date: 15/10/2020
     /// Last Edited:
     /// 
+    /// Handles Game Events
     /// </summary>
     public class GameEvents : MonoBehaviour
     {
@@ -19,17 +20,9 @@ namespace AidensWork
 
         [SerializeField] UnityEvent onEscape;
 
-        [SerializeField] UnityEvent OnStart;
-
         [SerializeField] UnityEvent onEnemyHit;
 
         [SerializeField] UnityEvent onPlayerHit;
-
-
-        private void Start()
-        {
-            OnStart?.Invoke();
-        }
 
         private void Update()
         {

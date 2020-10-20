@@ -23,14 +23,23 @@ public class PauseMenu : MonoBehaviour
     {
         PauseMenuRef.SetActive(true);
 
-        PauseGame();
+        PauseGame(true);
     }
 
-    public void PauseGame()
+    public void ClosePauseMenu()
+    {
+        PauseMenuRef.SetActive(false);
+
+        PauseGame(false);
+    }
+
+    public void PauseGame(bool ToggleOnOff)
     {
         //Disables Player Movement
-        PlayerCharacterRef.GetComponent<SimpleGridMovement>().enabled = false;
+        PlayerCharacterRef.GetComponent<SimpleGridMovement>().enabled = ToggleOnOff;
+
         //Disables Game Time
-        TimerScriptRef.GetComponent<GameTime>().enabled = false;
+        //Invert the bool toggle to disable time
+        TimerScriptRef.GetComponent<GameTime>().enabled = !ToggleOnOff;
     }
 }

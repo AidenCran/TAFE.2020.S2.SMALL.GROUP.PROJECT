@@ -63,7 +63,7 @@ namespace AidensWork
             pd = SaveManager.Load();
 
             //Initializes current score as saved score.
-            TotalScore = pd.playerScore;
+            //TotalScore = pd.playerScore;
 
             //Name only needs to be set once per wake.
             playerNameText.text = pd.playerName;
@@ -97,10 +97,12 @@ namespace AidensWork
             //References the GameTime Script for the timer
             GameTime gameTime = HUDScripts.GetComponent<GameTime>();
 
-            //Updates the time and score every frame
-            //Passing "00000000" into the ToString parameters allows the default to be "00000 etc."
-            timeRemainingText.text = gameTime.timeRemaining.ToString("00"); ;
-            playerScoreText.text = "SCORE: " + TotalScore.ToString("00000000");
+            TotalScore = ScoreCalc.Instance.TotalScoreBonus;
+
+            //Updates the time
+            timeRemainingText.text = gameTime.timeRemaining.ToString("N0");
+
+            //playerScoreText.text = "SCORE: " + TotalScore.ToString("N0");
 
             ///Below are values for the Score Screen///
             AmountOfExtraTimeText.text = AmountOfExtraTime.ToString("00");

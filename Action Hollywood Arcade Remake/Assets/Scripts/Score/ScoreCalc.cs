@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using AidensWork;
+using Hoey.Demo.Scripts;
 
 namespace AidensWork
 {
@@ -12,12 +13,34 @@ namespace AidensWork
     /// Last Edited:
     /// 
     /// Called on win.
-    /// Calculates all the score perameters.
+    /// Calculates all the score parameters.
     /// </summary>
     public class ScoreCalc : MonoBehaviour
     {
+        #region ---[ singleton code base ]---
+
+        // Singleton Reference
+        private static ScoreCalc _instance;
+        public static ScoreCalc Instance { get { return _instance; } }
+
+        // Setup Variables
+        private void Awake()
+        {
+            if (_instance != null && _instance != this)
+            {
+                Destroy(this.gameObject);
+            }
+            else
+            {
+                _instance = this;
+            }
+        }
+
+        #endregion
+
         PlayerData pd;
 
+        //Total Score the player has accumulated
         public int TotalScoreBonus;
 
         //Total Added Score from Bonus time
@@ -25,22 +48,35 @@ namespace AidensWork
         //Amount of extra time the player has
         public int AmountOfExtraTime = 50;
         //How much bonus is added per 
-        private int TimeBonusAmount = 100;
+        private int TimeBonusPer = 100;
 
         //Total Added Score from Brick Pickups
         public int BrickScoreBonus;
         //Amount the player picked up
         public int BrickAmountPickedUp = 40;
         //How much bonus is added per 
-        private int BrickBonusAmount = 200;
+        private int BrickBonusPer = 200;
 
         //Total Added score from secrets
         public int SecretScoreBonus;
         //Amount of secrets found
         public int SecretAmountFound = 30;
         //How much bonus is added per 
-        private int SecretBonusAmount = 300;
+        private int SecretBonusPer = 300;
 
+        public void IncreaseScore(int AddedScore)
+        {
+            //Sends the score increase to the Score Animator
+            this.GetComponent<AnimScore>().AddPoints(AddedScore);
+
+            //Increases Total Score
+            TotalScoreBonus += AddedScore;
+        }
+
+        /// <summary>
+        /// Called at end of round.
+        /// Calculates the players score.
+        /// </summary>
         public void ScoreCalculation()
         {
             pd = SaveManager.Load();
@@ -54,26 +90,28 @@ namespace AidensWork
 
             //Calcs Total Score
             //For Time
-            TimeScoreBonus = CurrentRoundedTime * TimeBonusAmount;
+            TimeScoreBonus = CurrentRoundedTime * TimeBonusPer;
             //For Bricks
-            BrickScoreBonus = BrickAmountPickedUp * BrickBonusAmount;
+            BrickScoreBonus = BrickAmountPickedUp * BrickBonusPer;
             //For Secrets
-            SecretBonusAmount = SecretAmountFound * SecretBonusAmount;
+            SecretScoreBonus = SecretAmountFound * SecretBonusPer;
 
             //Total
-            TotalScoreBonus = TimeScoreBonus + BrickScoreBonus + SecretBonusAmount;
+            TotalScoreBonus = TimeScoreBonus + BrickScoreBonus + SecretBonusPer;
 
-            //References the current scene's index #
-            int CurrentSceneIndex = SceneManager.GetActiveScene().buildIndex;
+            ///DISABLED FOR NOW, WILL CHANGE LATER///
 
-            if (CurrentSceneIndex >= pd.HighestLevelAchieved)
-            {
-                //Adds the Total score bonus to the PlayerData file
-                pd.playerScore += TotalScoreBonus;
-            }
+            ////References the current scene's index #
+            //int CurrentSceneIndex = SceneManager.GetActiveScene().buildIndex;
 
-            //Saves PlayerScore Data
-            SaveManager.Save(pd);
+            //if (CurrentSceneIndex >= pd.HighestLevelAchieved)
+            //{
+            //    //Adds the Total score bonus to the PlayerData file
+            //    pd.playerScore += TotalScoreBonus;
+            //}
+
+            ////Saves PlayerScore Data
+            //SaveManager.Save(pd);
 
             this.GetComponent<InGameTextHandler>().ScoreScreenAni();
         }
