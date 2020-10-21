@@ -70,21 +70,6 @@ namespace AidensWork
 
             //Sets Score Screen off by default
             ScoreScreenRef.SetActive(false);
-
-            ///Below are values for the Score Screen///
-
-            //References Amount of each value
-            AmountOfExtraTime = this.gameObject.GetComponent<ScoreCalc>().AmountOfExtraTime;
-            BrickAmountPickedUp = this.gameObject.GetComponent<ScoreCalc>().BrickAmountPickedUp;
-            SecretAmountFound = this.gameObject.GetComponent<ScoreCalc>().SecretAmountFound;
-
-            ///PRETTY SURE DO NOT NEED. WILL DELETE SOON///
-            ///References the Total
-            ///int TotalScore = this.gameObject.GetComponent<ScoreCalc>().TotalScoreBonus;
-            ///int TimeBonus = this.gameObject.GetComponent<ScoreCalc>().TimeScoreBonus;
-            ///int BrickBonus = this.gameObject.GetComponent<ScoreCalc>().BrickScoreBonus;
-            ///int SecretBonus = this.gameObject.GetComponent<ScoreCalc>().SecretScoreBonus;
-            ///PRETTY SURE DO NOT NEED. WILL DELETE SOON///
         }
 
         void Update()
@@ -97,20 +82,8 @@ namespace AidensWork
             //References the GameTime Script for the timer
             GameTime gameTime = HUDScripts.GetComponent<GameTime>();
 
-            TotalScore = ScoreCalc.Instance.TotalScoreBonus;
-
             //Updates the time
             timeRemainingText.text = gameTime.timeRemaining.ToString("N0");
-
-            //playerScoreText.text = "SCORE: " + TotalScore.ToString("N0");
-
-            ///Below are values for the Score Screen///
-            AmountOfExtraTimeText.text = AmountOfExtraTime.ToString("00");
-            BrickAmountPickedUpText.text = BrickAmountPickedUp.ToString("00");
-            SecretAmountFoundText.text = SecretAmountFound.ToString("00");
-
-            ///Below are values for the player lives
-            //-----
         }
 
         public void SetCurrentLives()
@@ -118,57 +91,6 @@ namespace AidensWork
             PlayerLivesRef = PlayerLives.Instance.playerLives;
 
             LifeSprites[PlayerLivesRef].gameObject.SetActive(false);
-        }
-
-        public void ScoreScreenAni()
-        {
-            //Prevents the player from moving
-            PlayerCharacterRef.GetComponent<SimpleGridMovement>().enabled = false;
-            //Activates the score screen
-            ScoreScreenRef.SetActive(true);
-
-            while (EndCalculatingScore == false)
-            {
-                //From top to bottom visually
-                //First reduces time bonus to 0
-                for (int i = 0; i < AmountOfExtraTime; i++)
-                {
-                    //Change -- to something like 
-                    //-= Mathf.RoundToInt(Time.deltaTime);
-                    //AmountOfExtraTime -= Mathf.RoundToInt(1 * Time.deltaTime);
-
-                    //I Want to change this to reduce # by seconds
-                    AmountOfExtraTime--;
-                    TotalScore += 100;
-                }
-
-
-
-
-
-                //Second reduces brick bonus to 0
-                for (int i = 0; i < BrickAmountPickedUp; i++)
-                {
-                    BrickAmountPickedUp--;
-                    TotalScore += 200;
-                }
-
-                //Third and last reduces secret bonus to 0
-                for (int i = 0; i < SecretAmountFound; i++)
-                {
-                    SecretAmountFound--;
-                    TotalScore += 300;
-                }
-
-                if (AmountOfExtraTime == 0 && BrickAmountPickedUp == 0 && SecretAmountFound == 0)
-                {
-                    //Debug.Log("End of calculation");
-
-                    //Debug.Log($"PlayerData Score: {pd.playerScore}");
-
-                    EndCalculatingScore = true;
-                }
-            }
         }
     }
 }

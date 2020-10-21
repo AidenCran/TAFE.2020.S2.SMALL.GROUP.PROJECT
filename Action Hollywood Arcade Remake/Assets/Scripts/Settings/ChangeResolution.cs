@@ -11,7 +11,7 @@ namespace AidensWork
     /// Date: 14/10/2020
     /// Last Edited: 
     /// 
-    /// 
+    /// Allows the user to change resolution, defaults to 1080p 60fps, fullscreen.
     /// </summary>
     public class ChangeResolution : MonoBehaviour
     {

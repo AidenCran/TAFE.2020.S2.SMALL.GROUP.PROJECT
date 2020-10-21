@@ -17,6 +17,14 @@ namespace Hoey.Demo.Scripts
     /// </summary>
     public class AnimScore : MonoBehaviour
     {
+        public GameObject GameOverRef;
+
+        bool IsGameOver;
+
+        [SerializeField] Text TimeBonusText;
+        [SerializeField] Text BrickBonusText;
+        [SerializeField] Text SecretBonusText;
+
         [SerializeField] Text scoreText;
         [SerializeField] float pointAnimDurationSec = 2f;
 
@@ -53,13 +61,13 @@ namespace Hoey.Demo.Scripts
 
         void Start()
         {
-            //TotalScoreReference = 
-
             scoreText.text = "SCORE: " + displayedScore.ToString("0,000,000");
         }
 
         void Update()
         {
+            IsGameOver = GameOverRef.GetComponent<GameOverCondition>().GameOver;
+
             if (displayedScore != currentScore)
             {
                 pointAnimTimer += Time.deltaTime;
@@ -69,9 +77,38 @@ namespace Hoey.Demo.Scripts
                 // it will add a cumulating error
                 displayedScore = Mathf.Lerp(savedDisplayedScore, currentScore, percentageComplete);
 
-                scoreText.text = "SCORE: " + displayedScore.ToString("0,000,000"); //Number
-                                                                //scoreText.text = displayedScore.ToString("C0"); //Currency
-                                                                //scoreText.text = displayedScore.ToString("P0"); //Percent
+                scoreText.text = "SCORE: " + displayedScore.ToString("0,000,000");
+            }
+
+            //Runs on update
+            scoreCalcAnim();
+        }
+
+        /// <summary>
+        /// This handles lerping the amount of amount of each score bonus the player achieved to 0.
+        /// </summary>
+        public void scoreCalcAnim()
+        {
+            //Checks if game is over.
+            //On loss scene is unloaded, so don't need to define if player won.
+            if (IsGameOver == true)
+            {
+                int TimeBonus = ScoreCalc.Instance.TimeScoreBonus;
+                int BrickBonus = ScoreCalc.Instance.BrickScoreBonus;
+                int SecretBonus = ScoreCalc.Instance.SecretScoreBonus;
+                
+                pointAnimTimer += Time.deltaTime;
+                float percentageComplete = pointAnimTimer / pointAnimDurationSec;
+
+
+                float displayedTimeScoreBonus = Mathf.Lerp(TimeBonus, 0, percentageComplete);
+                TimeBonusText.text = displayedTimeScoreBonus.ToString("00");
+
+                float displayedBrickScoreBonus = Mathf.Lerp(BrickBonus, 0, percentageComplete);
+                BrickBonusText.text = displayedBrickScoreBonus.ToString("00");
+
+                float displayedSecretScoreBonus = Mathf.Lerp(SecretBonus, 0, percentageComplete);
+                SecretBonusText.text = displayedSecretScoreBonus.ToString("00");
             }
         }
     }

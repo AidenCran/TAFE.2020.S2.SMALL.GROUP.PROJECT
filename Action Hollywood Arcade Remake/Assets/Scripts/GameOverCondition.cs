@@ -65,9 +65,7 @@ namespace AidensWork
             //Calculates the score
             TimerReference.GetComponent<ScoreCalc>().ScoreCalculation();
 
-            //Loads the WinScene
-            //SceneToLoad = "WinScene";
-            //this.GetComponent<GameNavigation>().ChangeScene(SceneToLoad);
+            
         }
     }
 }

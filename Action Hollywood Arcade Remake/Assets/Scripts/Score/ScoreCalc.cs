@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using AidensWork;
 using Hoey.Demo.Scripts;
+using Hoey.Examples;
 
 namespace AidensWork
 {
@@ -40,13 +41,20 @@ namespace AidensWork
 
         PlayerData pd;
 
+        public GameObject PlayerCharacterRef;
+
+        public GameObject ScoreScreenRef;
+
+        //
+        public int TotalScore;
+
         //Total Score the player has accumulated
         public int TotalScoreBonus;
 
         //Total Added Score from Bonus time
         public int TimeScoreBonus;
         //Amount of extra time the player has
-        public int AmountOfExtraTime = 50;
+        public int AmountOfExtraTime;
         //How much bonus is added per 
         private int TimeBonusPer = 100;
 
@@ -70,7 +78,7 @@ namespace AidensWork
             this.GetComponent<AnimScore>().AddPoints(AddedScore);
 
             //Increases Total Score
-            TotalScoreBonus += AddedScore;
+            TotalScore += AddedScore;
         }
 
         /// <summary>
@@ -88,16 +96,31 @@ namespace AidensWork
 
             AmountOfExtraTime = CurrentRoundedTime;
 
+            Debug.Log("Time Remaining: " + CurrentRoundedTime);
+
             //Calcs Total Score
             //For Time
-            TimeScoreBonus = CurrentRoundedTime * TimeBonusPer;
+            TimeScoreBonus = AmountOfExtraTime * TimeBonusPer;
             //For Bricks
             BrickScoreBonus = BrickAmountPickedUp * BrickBonusPer;
             //For Secrets
             SecretScoreBonus = SecretAmountFound * SecretBonusPer;
 
             //Total
-            TotalScoreBonus = TimeScoreBonus + BrickScoreBonus + SecretBonusPer;
+            TotalScoreBonus = TimeScoreBonus + BrickScoreBonus + SecretScoreBonus;
+
+            IncreaseScore(TotalScoreBonus);
+
+            //Prevents the player from moving
+            PlayerCharacterRef.GetComponent<SimpleGridMovement>().enabled = false;
+
+            //Activates the score screen
+            ScoreScreenRef.SetActive(true);
+
+
+
+
+
 
             ///DISABLED FOR NOW, WILL CHANGE LATER///
 
@@ -112,8 +135,6 @@ namespace AidensWork
 
             ////Saves PlayerScore Data
             //SaveManager.Save(pd);
-
-            this.GetComponent<InGameTextHandler>().ScoreScreenAni();
         }
     }
 }

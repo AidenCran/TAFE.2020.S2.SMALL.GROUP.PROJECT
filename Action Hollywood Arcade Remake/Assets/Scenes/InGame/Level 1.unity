@@ -26780,7 +26780,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7fb896523b3496444b7cb5143b2c78e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeRemaining: 60
+  timeRemaining: 90
   WinConditionReference: {fileID: 350808519}
   hasWonRef: 0
 --- !u!114 &2090171559
@@ -26795,6 +26795,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5dac2862742f11146ac6da663048f0cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  PlayerCharacterRef: {fileID: 1009518147}
+  ScoreScreenRef: {fileID: 1397998348}
+  TotalScore: 0
   TotalScoreBonus: 0
   TimeScoreBonus: 0
   AmountOfExtraTime: 50
@@ -26867,6 +26870,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 511e19df38fc49047b2b895a478133aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  GameOverRef: {fileID: 350808519}
+  TimeBonusText: {fileID: 1977885163}
+  BrickBonusText: {fileID: 1335219208}
+  SecretBonusText: {fileID: 22448918}
   scoreText: {fileID: 431717951}
   pointAnimDurationSec: 2
 --- !u!1 &2095462947
