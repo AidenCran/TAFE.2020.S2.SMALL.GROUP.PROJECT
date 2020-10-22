@@ -5279,8 +5279,8 @@ GameObject:
   - component: {fileID: 3300898823394614028}
   - component: {fileID: 2581450593817183718}
   - component: {fileID: 781300806803854970}
-  - component: {fileID: 781300806803854969}
   - component: {fileID: 8822240854071121759}
+  - component: {fileID: 7822231611505765610}
   m_Layer: 0
   m_Name: male lowpoly base mesh animated
   m_TagString: Player
@@ -5343,7 +5343,21 @@ CharacterController:
   m_SkinWidth: 0.001
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 1, z: 0}
---- !u!114 &781300806803854969
+--- !u!114 &8822240854071121759
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2775612999501644214}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b5df5bd94f809e34a9506e37e7ec224d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DeathParticleRef: {fileID: 7623944381773788881}
+  RespawnParticleRef: {fileID: 2268612291840973584}
+--- !u!114 &7822231611505765610
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -5359,27 +5373,13 @@ MonoBehaviour:
   allowDiagonalMovement: 0
   wallLayer:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 256
   OnMove:
     m_PersistentCalls:
       m_Calls: []
   OnIdle:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &8822240854071121759
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2775612999501644214}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b5df5bd94f809e34a9506e37e7ec224d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  DeathParticleRef: {fileID: 7623944381773788881}
-  RespawnParticleRef: {fileID: 2268612291840973584}
 --- !u!1 &3065375791405804559
 GameObject:
   m_ObjectHideFlags: 0

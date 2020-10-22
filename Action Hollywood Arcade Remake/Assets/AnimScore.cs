@@ -97,10 +97,10 @@ namespace Hoey.Demo.Scripts
                 int BrickBonus = ScoreCalc.Instance.BrickScoreBonus;
                 int SecretBonus = ScoreCalc.Instance.SecretScoreBonus;
                 
-                pointAnimTimer += Time.deltaTime;
+                //pointAnimTimer += Time.deltaTime;
                 float percentageComplete = pointAnimTimer / pointAnimDurationSec;
 
-
+                
                 float displayedTimeScoreBonus = Mathf.Lerp(TimeBonus, 0, percentageComplete);
                 TimeBonusText.text = displayedTimeScoreBonus.ToString("00");
 
