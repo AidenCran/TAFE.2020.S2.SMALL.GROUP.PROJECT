@@ -25,6 +25,10 @@ namespace Hoey.Demo.Scripts
         [SerializeField] Text BrickBonusText;
         [SerializeField] Text SecretBonusText;
 
+        int TimeBonus;
+        int BrickBonus;
+        int SecretBonus;
+
         [SerializeField] Text scoreText;
         [SerializeField] float pointAnimDurationSec = 2f;
 
@@ -80,8 +84,32 @@ namespace Hoey.Demo.Scripts
                 scoreText.text = "SCORE: " + displayedScore.ToString("0,000,000");
             }
 
-            //Runs on update
-            scoreCalcAnim();
+
+            //Checks if game is over.
+            //On loss scene is unloaded, so don't need to define if player won.
+            if (IsGameOver == true)
+            {
+                //Runs on update
+                scoreCalcAnim();
+            }
+
+            //While the game is not over, the score values update.
+            //Technically this isn't completely effecient, since its updating continously and needlessly, however here it works fine.
+            if (IsGameOver == false)
+            {
+                GetScoreValues();
+            }
+        }
+
+        /// <summary>
+        /// This function grabs the bonus' up till the game is over.
+        /// Once the game ends, this stops updating. 
+        /// </summary>
+        public void GetScoreValues()
+        {
+            TimeBonus = ScoreCalc.Instance.AmountOfExtraTime;
+            BrickBonus = ScoreCalc.Instance.BrickAmountPickedUp;
+            SecretBonus = ScoreCalc.Instance.SecretAmountFound;
         }
 
         /// <summary>
@@ -89,27 +117,16 @@ namespace Hoey.Demo.Scripts
         /// </summary>
         public void scoreCalcAnim()
         {
-            //Checks if game is over.
-            //On loss scene is unloaded, so don't need to define if player won.
-            if (IsGameOver == true)
-            {
-                int TimeBonus = ScoreCalc.Instance.TimeScoreBonus;
-                int BrickBonus = ScoreCalc.Instance.BrickScoreBonus;
-                int SecretBonus = ScoreCalc.Instance.SecretScoreBonus;
-                
-                //pointAnimTimer += Time.deltaTime;
-                float percentageComplete = pointAnimTimer / pointAnimDurationSec;
+            float percentageComplete = pointAnimTimer / pointAnimDurationSec;
 
-                
-                float displayedTimeScoreBonus = Mathf.Lerp(TimeBonus, 0, percentageComplete);
-                TimeBonusText.text = displayedTimeScoreBonus.ToString("00");
+            float displayedTimeScoreBonus = Mathf.Lerp(TimeBonus, 0, percentageComplete);
+            TimeBonusText.text = displayedTimeScoreBonus.ToString("00");
 
-                float displayedBrickScoreBonus = Mathf.Lerp(BrickBonus, 0, percentageComplete);
-                BrickBonusText.text = displayedBrickScoreBonus.ToString("00");
+            float displayedBrickScoreBonus = Mathf.Lerp(BrickBonus, 0, percentageComplete);
+            BrickBonusText.text = displayedBrickScoreBonus.ToString("00");
 
-                float displayedSecretScoreBonus = Mathf.Lerp(SecretBonus, 0, percentageComplete);
-                SecretBonusText.text = displayedSecretScoreBonus.ToString("00");
-            }
+            float displayedSecretScoreBonus = Mathf.Lerp(SecretBonus, 0, percentageComplete);
+            SecretBonusText.text = displayedSecretScoreBonus.ToString("00");
         }
     }
 }

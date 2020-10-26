@@ -34,6 +34,10 @@ namespace AidensWork
 
         public void QuitGame()
         {
+            //Deletes current Data
+            SaveManager.DeleteData();
+
+            //Exits Game
             Application.Quit();
         }
     }

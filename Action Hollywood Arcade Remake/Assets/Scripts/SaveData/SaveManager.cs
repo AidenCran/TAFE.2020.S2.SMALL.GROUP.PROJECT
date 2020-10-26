@@ -49,4 +49,14 @@ public static class SaveManager
 
         return pd;
     }
+
+    public static void DeleteData()
+    {
+        string fullPath = Application.persistentDataPath + directory + fileName;
+
+        if (File.Exists(fullPath))
+        {
+            File.Delete(fullPath);
+        }
+    }
 }

@@ -52,6 +52,9 @@ namespace AidensWork
                 //Play Animation?
                 //Or Spawn Particle System
 
+                //Increases Brick value by 1
+                ScoreCalc.Instance.BrickAmountPickedUp++;
+
                 //If Durability == 0, destroy the game object.
                 Destroy(gameObject);
             }

@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using AidensWork;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
@@ -23,6 +24,17 @@ public class NavMeshWalk : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (PauseMenu.Instance.GamePaused == true)
+        {
+            agent.isStopped = true;
+        }
+        
+        if (PauseMenu.Instance.GamePaused == false)
+        {
+            agent.isStopped = false;
+        }
+
+
         if (Vector3.Distance(nextLocation, this.transform.position) < .2)
         {
             currentWaypointCounter++;

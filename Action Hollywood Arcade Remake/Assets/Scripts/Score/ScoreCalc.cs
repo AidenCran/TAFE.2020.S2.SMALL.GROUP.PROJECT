@@ -61,14 +61,14 @@ namespace AidensWork
         //Total Added Score from Brick Pickups
         public int BrickScoreBonus;
         //Amount the player picked up
-        public int BrickAmountPickedUp = 40;
+        public int BrickAmountPickedUp;
         //How much bonus is added per 
         private int BrickBonusPer = 200;
 
         //Total Added score from secrets
         public int SecretScoreBonus;
         //Amount of secrets found
-        public int SecretAmountFound = 30;
+        public int SecretAmountFound;
         //How much bonus is added per 
         private int SecretBonusPer = 300;
 
