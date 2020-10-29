@@ -43,7 +43,7 @@ public class PauseMenu : MonoBehaviour
 
     public GameObject HUDClutter;
 
-    public GameObject GameOverRef;
+    public GameObject ScriptHolderRef;
 
     public bool GamePaused;
 
@@ -54,8 +54,9 @@ public class PauseMenu : MonoBehaviour
     /// </summary>
     public void TogglePlayerMenu()
     {
-        if (GameOverRef.GetComponent<GameOverCondition>().GameOver == false)
-        {
+        //Prevents the player from opening the menu if the game is over
+        if (ScriptHolderRef.GetComponent<GameOverCondition>().GameOver == false)
+        { 
             if (GamePaused == false)
             {
                 PauseMenuRef.SetActive(true);
@@ -80,6 +81,8 @@ public class PauseMenu : MonoBehaviour
 
         //Deactivates unnecessary UI
         HUDClutter.SetActive(!ToggleOnOff);
+
+        ScriptHolderRef.GetComponent<LensBlur>().EnableBlur(ToggleOnOff);
 
         GamePaused = ToggleOnOff;
     }

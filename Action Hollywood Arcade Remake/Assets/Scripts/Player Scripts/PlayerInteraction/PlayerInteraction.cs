@@ -10,8 +10,6 @@ namespace AidensWork
         private int RayCastDist = 1;
         RaycastHit hitPoint;
 
-        int EnemyScore = 100;
-
         private void Update()
         {
             playerAttack();
@@ -34,11 +32,8 @@ namespace AidensWork
                     //Checks if collider is an enemy
                     if (hitPoint.collider.tag == "Enemy")
                     {
-                        //Calls function to visually display the increased score and add score to total.
-                        ScoreCalc.Instance.IncreaseScore(EnemyScore);
-
-                        //Destroys enemy gameobject.
-                        Destroy(hitPoint.collider.gameObject);
+                        //Calls the on damage taken function
+                        hitPoint.collider.gameObject.GetComponent<EnemyController>().OnDamageTaken();
                     }
 
                     //Checks if collider is treasure

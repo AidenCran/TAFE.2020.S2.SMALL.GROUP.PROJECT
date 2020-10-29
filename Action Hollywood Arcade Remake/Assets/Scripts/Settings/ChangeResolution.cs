@@ -34,12 +34,6 @@ namespace AidensWork
             //Switch to 720p, 60hz
             Screen.SetResolution(1280, 720, isFullscreen, 60);
         }
-        public void SetResolutionWindowed360p()
-        {
-            //Switch to 360p, 60hz
-            //Why would anyone want this. They must have a potato.
-            Screen.SetResolution(640, 360, isFullscreen, 60);
-        }
 
         public TextMeshProUGUI SettingsDropdown;
         public void DropDownHandler(int val)
@@ -56,7 +50,7 @@ namespace AidensWork
 
             if (val == 2)
             {
-                SetResolutionWindowed360p();
+                //SetResolutionWindowed360p();
             }
         }
     }
