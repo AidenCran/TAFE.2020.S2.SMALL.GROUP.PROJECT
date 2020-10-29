@@ -64,8 +64,6 @@ namespace AidensWork
 
             //Calculates the score
             TimerReference.GetComponent<ScoreCalc>().ScoreCalculation();
-
-            
         }
     }
 }

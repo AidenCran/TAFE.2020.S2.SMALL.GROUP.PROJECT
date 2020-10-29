@@ -14,7 +14,7 @@ namespace AidensWork
     /// </summary>
     public class ObjectHover : MonoBehaviour
     {
-        Transform thisTranform;
+        Transform thisTransform;
         Vector3 startingPosition;
         Vector3 currentPosition;
         private float frequency = 1f;
@@ -23,8 +23,8 @@ namespace AidensWork
 
         private void Start()
         {
-            thisTranform = this.GetComponent<Transform>();
-            startingPosition = thisTranform.position;
+            thisTransform = this.GetComponent<Transform>();
+            startingPosition = thisTransform.position;
             currentPosition = startingPosition;
 
             yAngle = 0.8f;
@@ -32,11 +32,12 @@ namespace AidensWork
 
         void Update()
         {
-            //Use some basic trigonometry to do a natural looking wave motion
-            //Note: you could do something similar on Z and X axis and get some cool effects
-            currentPosition.y = startingPosition.y + Mathf.Sin(Time.time * frequency) * amplitude;
-            thisTranform.position = currentPosition;
-            thisTranform.Rotate(xAngle, yAngle, zAngle, Space.World);
+            if (PauseMenu.Instance.GamePaused == false)
+            {
+                currentPosition.y = startingPosition.y + Mathf.Sin(Time.time * frequency) * amplitude;
+                thisTransform.position = currentPosition;
+                thisTransform.Rotate(xAngle, yAngle, zAngle, Space.World);
+            }
         }
     }
 }

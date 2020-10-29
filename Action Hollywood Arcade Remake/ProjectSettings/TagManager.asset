@@ -9,6 +9,7 @@ TagManager:
   - Treasure
   - Invincible
   - ScoreObject
+  - TimeObject
   layers:
   - Default
   - TransparentFX

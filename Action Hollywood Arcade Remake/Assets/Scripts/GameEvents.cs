@@ -20,9 +20,7 @@ namespace AidensWork
 
         [SerializeField] UnityEvent onEscape;
 
-        [SerializeField] UnityEvent onEnemyHit;
-
-        [SerializeField] UnityEvent onPlayerHit;
+        [SerializeField] UnityEvent onShiftPress;
 
         private void Update()
         {
@@ -34,6 +32,11 @@ namespace AidensWork
             if (Input.GetButtonDown("Cancel"))
             {
                 onEscape?.Invoke();
+            }
+
+            if (Input.GetButtonDown("Sprint"))
+            {
+                onShiftPress?.Invoke();
             }
         }
 

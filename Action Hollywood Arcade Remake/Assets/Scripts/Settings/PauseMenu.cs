@@ -41,28 +41,45 @@ public class PauseMenu : MonoBehaviour
 
     public GameObject PauseMenuRef;
 
+    public GameObject HUDClutter;
+
+    public GameObject GameOverRef;
+
     public bool GamePaused;
 
-    public void OpenPauseMenu()
+    /// <summary>
+    /// This function is called when "Escape" is pressed
+    /// It determines if the menu is open, if it's not, pressing esc opens the menu.
+    /// Else it closes the menu
+    /// </summary>
+    public void TogglePlayerMenu()
     {
-        PauseGame(true);
-    }
-
-    public void ClosePauseMenu()
-    {
-        PauseGame(false);
+        if (GameOverRef.GetComponent<GameOverCondition>().GameOver == false)
+        {
+            if (GamePaused == false)
+            {
+                PauseMenuRef.SetActive(true);
+                PauseGame(true);
+            }
+            else
+            {
+                PauseMenuRef.SetActive(false);
+                PauseGame(false);
+            }
+        }
     }
 
     public void PauseGame(bool ToggleOnOff)
     {
-        PauseMenuRef.SetActive(ToggleOnOff);
-
         //Disables Player Movement
         PlayerCharacterRef.GetComponent<SimpleGridMovement>().enabled = !ToggleOnOff;
 
         //Disables Game Time
         //Invert the bool toggle to disable time
         TimerScriptRef.GetComponent<GameTime>().enabled = !ToggleOnOff;
+
+        //Deactivates unnecessary UI
+        HUDClutter.SetActive(!ToggleOnOff);
 
         GamePaused = ToggleOnOff;
     }

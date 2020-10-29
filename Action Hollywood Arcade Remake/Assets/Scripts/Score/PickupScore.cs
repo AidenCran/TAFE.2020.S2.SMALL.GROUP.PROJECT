@@ -30,6 +30,20 @@ namespace AidensWork
                 //Removes object from scene
                 Destroy(other.gameObject);
             }
+
+            if (other.tag == "TimeObject")
+            {
+                int AmountToIncreaseScoreBy;
+
+                //How much is this object worth?
+                AmountToIncreaseScoreBy = other.GetComponentInParent<ValueOfObject>().ValueOfThisObject;
+
+                //Calls function to visually display the increased score and add score to total.
+                ScoreCalc.Instance.IncreaseTime(AmountToIncreaseScoreBy);
+
+                //Removes object from scene
+                Destroy(other.gameObject);
+            }
         }
     }
 }

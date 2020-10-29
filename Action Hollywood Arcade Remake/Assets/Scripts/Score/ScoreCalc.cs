@@ -45,6 +45,8 @@ namespace AidensWork
 
         public GameObject ScoreScreenRef;
 
+        public GameObject HUDClutter;
+
         //
         public int TotalScore;
 
@@ -81,6 +83,12 @@ namespace AidensWork
             TotalScore += AddedScore;
         }
 
+        public void IncreaseTime(int AddedTime)
+        {
+            //Increases Total Score
+            this.gameObject.GetComponent<GameTime>().timeRemaining += AddedTime;
+        }
+
         /// <summary>
         /// Called at end of round.
         /// Calculates the players score.
@@ -106,20 +114,19 @@ namespace AidensWork
             //For Secrets
             SecretScoreBonus = SecretAmountFound * SecretBonusPer;
 
-            //Total
+            //Total Score Calculation
             TotalScoreBonus = TimeScoreBonus + BrickScoreBonus + SecretScoreBonus;
 
             IncreaseScore(TotalScoreBonus);
 
-            //Prevents the player from moving
-            PlayerCharacterRef.GetComponent<SimpleGridMovement>().enabled = false;
+            //Pauses the game
+            PauseMenu.Instance.PauseGame(true);
 
             //Activates the score screen
             ScoreScreenRef.SetActive(true);
 
-
-
-
+            //Deactivates unnecessary UI
+            HUDClutter.SetActive(false);
 
 
             ///DISABLED FOR NOW, WILL CHANGE LATER///

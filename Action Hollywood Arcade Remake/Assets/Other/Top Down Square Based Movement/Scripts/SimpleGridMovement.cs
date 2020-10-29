@@ -97,6 +97,19 @@ namespace Hoey.Examples
                     StartCoroutine(MoveTransformWithGridSnapping(controller.transform));
                 }
             }
+
+
+            //Sprint Functionality
+            if (Input.GetButtonDown("Sprint"))
+            {
+                PlayerSprint(3f);
+            }
+
+            if (Input.GetButtonUp("Sprint"))
+            {
+                PlayerSprint(-3f);
+            }
+
         }
 
         //Quickly snap the object (in this case the player) to a certain direction
@@ -160,6 +173,11 @@ namespace Hoey.Examples
 
             isMoving = false;
             yield return 0;
+        }
+
+        public void PlayerSprint(float IncreaseSpeed)
+        {
+            movementSpeed += IncreaseSpeed;
         }
     }
 }
