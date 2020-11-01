@@ -16,9 +16,9 @@ namespace AidensWork
     public class EnemyController : MonoBehaviour
     {
         //Default Should Be 2 or 3
-        int currentEnemyHealth = 1;
+        public int currentEnemyHealth = 1;
 
-        int EnemyScore = 100;
+        public int EnemyScore = 100;
 
         public void OnDamageTaken()
         {

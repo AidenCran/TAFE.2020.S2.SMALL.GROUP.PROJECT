@@ -19,6 +19,7 @@ ScriptsOnlyBuild:
     - AidensWork.LensBlur
     - AidensWork.LevelID
     - AidensWork.ObjectHover
+    - AidensWork.OnScoreSpawn
     - AidensWork.PickupScore
     - AidensWork.PlayerInteraction
     - AidensWork.PlayerLives
@@ -300,6 +301,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 16734}
     - Class: 114
       Script: {instanceID: 16872}
+    - Class: 114
+      Script: {instanceID: 130538}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -470,9 +473,9 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 16706}
     - Class: 114
-      Script: {instanceID: 32734}
+      Script: {instanceID: 116198}
     - Class: 114
-      Script: {instanceID: 32736}
+      Script: {instanceID: 116200}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -643,9 +646,9 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 16706}
     - Class: 114
-      Script: {instanceID: 32734}
+      Script: {instanceID: 116198}
     - Class: 114
-      Script: {instanceID: 32736}
+      Script: {instanceID: 116200}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -816,9 +819,9 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 16706}
     - Class: 114
-      Script: {instanceID: 32734}
+      Script: {instanceID: 116198}
     - Class: 114
-      Script: {instanceID: 32736}
+      Script: {instanceID: 116200}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -2193,7 +2196,7 @@ ScriptsOnlyBuild:
     className: CinemachineBlendListCamera
   - hash:
       serializedVersion: 2
-      Hash: f8bf51d55577049dd1e5b4b9c2d7be69
+      Hash: c069061a7a4daf5b496c39f5526d08d2
     assemblyName: Assembly-CSharp.dll
     namespaceName: AidensWork
     className: RespawnParticles
@@ -2625,7 +2628,7 @@ ScriptsOnlyBuild:
     className: Outline
   - hash:
       serializedVersion: 2
-      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+      Hash: 816bf9222b10b41775ee12118b3fa18a
     assemblyName: Assembly-CSharp.dll
     namespaceName: AidensWork
     className: EnemyController
@@ -2779,6 +2782,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
     className: PlayableTrack
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: AidensWork
+    className: OnScoreSpawn
   platform: 5
   scenePathNames:
   - Assets/Scenes/Menus/MainMenus.unity

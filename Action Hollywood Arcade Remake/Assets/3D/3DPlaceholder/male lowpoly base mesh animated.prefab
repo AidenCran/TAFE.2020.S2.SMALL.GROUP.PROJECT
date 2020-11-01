@@ -5358,6 +5358,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   DeathParticleRef: {fileID: 7623944381773788881}
   RespawnParticleRef: {fileID: 2268612291840973584}
+  RevisedParticleSystem: {fileID: 7475926859562323402}
 --- !u!114 &7822231611505765610
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10768,7 +10769,7 @@ PrefabInstance:
     - target: {fileID: 3606975659892118421, guid: 28e3a9b88b4cd4040b2e060dfb225a09,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4868871780124411549, guid: 28e3a9b88b4cd4040b2e060dfb225a09,
         type: 3}
@@ -10835,6 +10836,12 @@ PrefabInstance:
 --- !u!4 &5248568703451506189 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4868871780124411549, guid: 28e3a9b88b4cd4040b2e060dfb225a09,
+    type: 3}
+  m_PrefabInstance: {fileID: 812649572693762192}
+  m_PrefabAsset: {fileID: 0}
+--- !u!198 &7475926859562323402 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 7852254260250766682, guid: 28e3a9b88b4cd4040b2e060dfb225a09,
     type: 3}
   m_PrefabInstance: {fileID: 812649572693762192}
   m_PrefabAsset: {fileID: 0}

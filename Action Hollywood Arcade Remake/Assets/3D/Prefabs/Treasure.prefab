@@ -110,5 +110,5 @@ MonoBehaviour:
   PlayerCharacter: {fileID: 0}
   TreasurePrefab: {fileID: 7830569122865890858, guid: 162c8ba961229d948ba301e1b4195eb5,
     type: 3}
-  AmountToSpawn: 3
+  AmountToSpawn: 1
   TreasureDurability: 3

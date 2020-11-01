@@ -114,7 +114,7 @@ MonoBehaviour:
   m_MinSize: {x: 679, y: 492}
   m_MaxSize: {x: 14002, y: 14042}
   vertical: 1
-  controlID: 83
+  controlID: 64
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -139,7 +139,7 @@ MonoBehaviour:
   m_MinSize: {x: 679, y: 492}
   m_MaxSize: {x: 14002, y: 14042}
   vertical: 0
-  controlID: 84
+  controlID: 65
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -164,7 +164,7 @@ MonoBehaviour:
   m_MinSize: {x: 403, y: 492}
   m_MaxSize: {x: 10001, y: 14042}
   vertical: 1
-  controlID: 142
+  controlID: 72
 --- !u!114 &8
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -189,7 +189,7 @@ MonoBehaviour:
   m_MinSize: {x: 403, y: 221}
   m_MaxSize: {x: 8003, y: 4021}
   vertical: 0
-  controlID: 143
+  controlID: 124
 --- !u!114 &9
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -209,8 +209,8 @@ MonoBehaviour:
     y: 0
     width: 311
     height: 649
-  m_MinSize: {x: 201, y: 221}
-  m_MaxSize: {x: 4001, y: 4021}
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 18}
   m_Panes:
   - {fileID: 18}
@@ -264,7 +264,7 @@ MonoBehaviour:
     height: 298
   m_MinSize: {x: 231, y: 271}
   m_MaxSize: {x: 10001, y: 10021}
-  m_ActualView: {fileID: 21}
+  m_ActualView: {fileID: 16}
   m_Panes:
   - {fileID: 21}
   - {fileID: 16}
@@ -272,8 +272,8 @@ MonoBehaviour:
   - {fileID: 20}
   - {fileID: 14}
   - {fileID: 13}
-  m_Selected: 0
-  m_LastSelected: 2
+  m_Selected: 1
+  m_LastSelected: 0
 --- !u!114 &12
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -293,8 +293,8 @@ MonoBehaviour:
     y: 0
     width: 415
     height: 947
-  m_MinSize: {x: 276, y: 71}
-  m_MaxSize: {x: 4001, y: 4021}
+  m_MinSize: {x: 275, y: 50}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 23}
   m_Panes:
   - {fileID: 23}
@@ -410,7 +410,7 @@ MonoBehaviour:
   m_ViewDataDictionary: {fileID: 0}
   m_LockTracker:
     m_IsLocked: 0
-  m_LastSelectedObjectID: -49468
+  m_LastSelectedObjectID: 237458
 --- !u!114 &15
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -476,21 +476,21 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/2D/Materials
+    - Assets/Scripts/Player Scripts/PlayerInteraction
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/2D/Materials
+  - Assets/Scripts/Player Scripts/PlayerInteraction
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\Users\aiden\Documents\GitHub\TAFE.2020.S2.SMALL.GROUP.PROJECT\Action
     Hollywood Arcade Remake
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 79}
-    m_SelectedIDs: a6510000
-    m_LastClickedID: 20902
-    m_ExpandedIDs: 00000000ae510000b0510000b2510000b4510000b6510000b8510000ba510000bc510000be510000c0510000c2510000c4510000c6510000c8510000ca510000cc510000ce510000d0510000d2510000
+    scrollPos: {x: 0, y: 703}
+    m_SelectedIDs: 26520000
+    m_LastClickedID: 21030
+    m_ExpandedIDs: 00000000ae510000b0510000b2510000b4510000b6510000b8510000ba510000bc510000be510000c0510000c2510000c4510000c6510000c8510000ca510000cc510000ce510000d0510000d251000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -545,7 +545,7 @@ MonoBehaviour:
   m_ListAreaState:
     m_SelectedInstanceIDs: 
     m_LastClickedInstanceID: 0
-    m_HadKeyboardFocusLastEvent: 0
+    m_HadKeyboardFocusLastEvent: 1
     m_ExpandedInstanceIDs: b046000060400000f83e000000000000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -695,23 +695,23 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 
+      m_SelectedIDs: ee3e0000
       m_LastClickedID: 0
-      m_ExpandedIDs: 7abeffff96beffff32cdffff38daffff42e7ffffe4e7ffffe8e7ffffece7fffff0e7fffff4e7ffff0ae8ffff2cfbffff
+      m_ExpandedIDs: 2c7efeff487efeffe08cfeffe299feffe8a6feff8aa7feff8ea7feff92a7feff96a7feff9aa7feffb0a7feff42c0feff5ec0fefffacefeff00dcfeff0ae9fefface9feffb0e9feffb4e9feffb8e9feffbce9feffd2e9feff34f1feffe6fefeff02fffeff9e0dffffa41affffae27ffff5028ffff5428ffff5828ffff5c28ffff6028ffff7628ffff7a59ffff9659ffff3268ffff3875ffff4282ffffe482ffffe882ffffec82fffff082fffff482ffff0a83ffff26e0ffff02e1ffffe0e7fffffae7ffff20e8ffff2cfbffff0a550000f65600002a5d0000fe5d000088de010004e60100f0c00200e8720300a8760300447f0300
       m_RenameOverlay:
         m_UserAcceptedRename: 0
-        m_Name: 
-        m_OriginalName: 
+        m_Name: '[Holder] Torches'
+        m_OriginalName: '[Holder] Torches'
         m_EditFieldRect:
           serializedVersion: 2
           x: 0
           y: 0
           width: 0
           height: 0
-        m_UserData: 0
+        m_UserData: 24608
         m_IsWaitingForDelay: 0
         m_IsRenaming: 0
-        m_OriginalEventType: 11
+        m_OriginalEventType: 0
         m_IsRenamingFilename: 0
         m_ClientGUIView: {fileID: 9}
       m_SearchString: 
@@ -757,9 +757,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 0.5257261, y: -3.3849127, z: 2.976059}
+    m_Target: {x: 1.318302, y: -3.6015625, z: -0.43201172}
     speed: 2
-    m_Value: {x: 0.5257261, y: -3.3849127, z: 2.976059}
+    m_Value: {x: 1.318302, y: -3.6015625, z: -0.43201172}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -805,17 +805,17 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: 0.4200506, y: -0.00054642896, z: 0.00025233862, w: 0.90750176}
+    m_Target: {x: 0.56537324, y: 0.004948938, z: -0.0033922787, w: 0.8248131}
     speed: 2
-    m_Value: {x: -0.4200506, y: 0.00054642896, z: -0.0002523386, w: -0.90750176}
+    m_Value: {x: 0.56537336, y: 0.004948939, z: -0.0033922794, w: 0.8248133}
   m_Size:
-    m_Target: 4.6026535
+    m_Target: 5.993852
     speed: 2
-    m_Value: 4.6026535
+    m_Value: 5.993852
   m_Ortho:
-    m_Target: 0
+    m_Target: 1
     speed: 2
-    m_Value: 0
+    m_Value: 1
   m_CameraSettings:
     m_Speed: 1
     m_SpeedNormalized: 0.4974874
@@ -829,7 +829,7 @@ MonoBehaviour:
     m_FarClip: 10000
     m_DynamicClip: 1
     m_OcclusionCulling: 0
-  m_LastSceneViewRotation: {x: 0.28438002, y: 0.29698163, z: -0.09313705, w: 0.9067873}
+  m_LastSceneViewRotation: {x: 0.4200506, y: -0.00054642896, z: 0.00025233862, w: 0.90750176}
   m_LastSceneViewOrtho: 0
   m_ReplacementShader: {fileID: 0}
   m_ReplacementString: 
@@ -901,11 +901,11 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/3D/Models/David Models
+    - Assets/3D/Models
   m_ViewMode: 1
   m_StartGridSize: 60
   m_LastFolders:
-  - Assets/3D/Models/David Models
+  - Assets/3D/Models
   m_LastFoldersGridSize: 60
   m_LastProjectPath: C:\Users\aiden\Documents\GitHub\TAFE.2020.S2.SMALL.GROUP.PROJECT\Action
     Hollywood Arcade Remake
@@ -913,9 +913,9 @@ MonoBehaviour:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 79}
-    m_SelectedIDs: 32520000
-    m_LastClickedID: 21042
-    m_ExpandedIDs: 00000000ae510000b0510000b2510000b4510000b6510000b8510000ba510000bc510000be510000c0510000c2510000c4510000c6510000c8510000ca510000cc510000ce510000d0510000d2510000ea51000000ca9a3b
+    m_SelectedIDs: e8510000
+    m_LastClickedID: 20968
+    m_ExpandedIDs: 00000000ae510000b0510000b2510000b4510000b6510000b8510000ba510000bc510000be510000c0510000c2510000c4510000c6510000c8510000ca510000cc510000ce510000d0510000d2510000e851000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -970,7 +970,7 @@ MonoBehaviour:
   m_ListAreaState:
     m_SelectedInstanceIDs: 
     m_LastClickedInstanceID: 0
-    m_HadKeyboardFocusLastEvent: 0
+    m_HadKeyboardFocusLastEvent: 1
     m_ExpandedInstanceIDs: c6230000e24d00001a3f00005e3d0000c4430000ec430000da460000b0460000767b0000f83e00008646000000000000d442000058530000
     m_RenameOverlay:
       m_UserAcceptedRename: 0

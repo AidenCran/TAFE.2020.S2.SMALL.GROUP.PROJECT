@@ -107,6 +107,7 @@ GameObject:
   - component: {fileID: -8444976415890445756}
   - component: {fileID: -9203947298850119097}
   - component: {fileID: 6873153839534609066}
+  - component: {fileID: 201244066422410141}
   m_Layer: 0
   m_Name: Coin_Model
   m_TagString: ScoreObject
@@ -227,7 +228,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   frequency: 1
-  amplitude: 1
+  amplitude: 0.5
   xAngle: 0
   yAngle: 0
   zAngle: 0
+--- !u!114 &201244066422410141
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7830569122865890858}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bdf56cd1d069d4e449d62e8215211a02, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

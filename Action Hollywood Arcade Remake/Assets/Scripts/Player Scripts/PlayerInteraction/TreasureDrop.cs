@@ -20,7 +20,7 @@ namespace AidensWork
         public GameObject TreasurePrefab;
 
         //Specifies how many objects will spawn
-        public int AmountToSpawn = 3;
+        public int AmountToSpawn = 1;
 
         //Defines the amount of times you can hit the treasure until it breaks
         public int TreasureDurability = 3;
