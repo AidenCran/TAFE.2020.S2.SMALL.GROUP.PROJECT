@@ -17,9 +17,9 @@ namespace AidensWork
         Transform thisTransform;
         Vector3 startingPosition;
         Vector3 currentPosition;
-        private float frequency = 1f;
-        private float amplitude = 0.5f;
-        private float xAngle, yAngle, zAngle;
+        public float frequency = 1f;
+        public float amplitude = 0.5f;
+        public float xAngle, yAngle, zAngle;
 
         private void Start()
         {

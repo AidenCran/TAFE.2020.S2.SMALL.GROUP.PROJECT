@@ -5,45 +5,49 @@ using UnityEngine.UI;
 
 public class SaveInputField : MonoBehaviour
 {
-    //Reference to objects
+    // Reference to objects
     public GameObject ParentReference;
     public GameObject StartButtonReference;
 
-    //Allows us to reference the player's data, e.g. Name
+    // Allows us to reference the player's data, e.g. Name
     [SerializeField] PlayerData pd;
     public Text playerNameText;
 
+    // Defines if menu is currently open
+    public bool isMenuOpen;
+
     public void Start()
     {
-        //On Start loads the data
+        // On Start loads the data
         Load();
     }
 
-    private void Update()
-    {
-        //Debug.Log(playerNameText.text);
-        //pd.playerName = playerNameText.text;
-
-        if (Input.GetKeyDown(KeyCode.Return))
-        {
-            pd = SaveManager.Load();
-            //Debug.Log("Data Loaded");
-        }
-    }
-
+    //public void SaveAndContinue()
+    //{
+    //    // Checks if menu is open before executing
+    //    if (isMenuOpen == true)
+    //    {
+    //        SetName();
+    //        Save();
+    //        //hide();
+    //    }
+    //}
 
     public void SetName()
     {
          pd.playerName = playerNameText.text;
     }
 
-    public void hide()
-    {
-        ParentReference.SetActive(false);
-    }
     public void show()
     {
         ParentReference.SetActive(true);
+        isMenuOpen = true;
+    }
+
+    public void hide()
+    {
+        ParentReference.SetActive(false);
+        isMenuOpen = false;
     }
 
     public void Save()
@@ -55,9 +59,4 @@ public class SaveInputField : MonoBehaviour
     {
         pd = SaveManager.Load();
     }
-
-    //public void ButtonReselectable()
-    //{
-    //    StartButtonReference.GetComponent<Button>().interactable = true;
-    //}
 }

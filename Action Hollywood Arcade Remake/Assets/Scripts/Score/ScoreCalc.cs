@@ -47,45 +47,45 @@ namespace AidensWork
 
         public GameObject HUDClutter;
 
-        //
+
         public int TotalScore;
 
-        //Total Score the player has accumulated
+        // Total Score the player has accumulated
         public int TotalScoreBonus;
 
-        //Total Added Score from Bonus time
+        // Total Added Score from Bonus time
         public int TimeScoreBonus;
-        //Amount of extra time the player has
+        // Amount of extra time the player has
         public int AmountOfExtraTime;
-        //How much bonus is added per 
+        // How much bonus is added per 
         private int TimeBonusPer = 100;
 
-        //Total Added Score from Brick Pickups
+        // Total Added Score from Brick Pickups
         public int BrickScoreBonus;
-        //Amount the player picked up
+        // Amount the player picked up
         public int BrickAmountPickedUp;
-        //How much bonus is added per 
+        // How much bonus is added per 
         private int BrickBonusPer = 200;
 
-        //Total Added score from secrets
+        // Total Added score from secrets
         public int SecretScoreBonus;
-        //Amount of secrets found
+        // Amount of secrets found
         public int SecretAmountFound;
-        //How much bonus is added per 
+        // How much bonus is added per 
         private int SecretBonusPer = 300;
 
         public void IncreaseScore(int AddedScore)
         {
-            //Sends the score increase to the Score Animator
+            // Sends the score increase to the Score Animator
             this.GetComponent<AnimScore>().AddPoints(AddedScore);
 
-            //Increases Total Score
+            // Increases Total Score
             TotalScore += AddedScore;
         }
 
         public void IncreaseTime(int AddedTime)
         {
-            //Increases Total Score
+            // Increases Total Score
             this.gameObject.GetComponent<GameTime>().timeRemaining += AddedTime;
         }
 
@@ -97,36 +97,41 @@ namespace AidensWork
         {
             pd = SaveManager.Load();
 
-            //References score on win
+            // References score on win
             float CurrentTimeLeft = this.gameObject.GetComponent<GameTime>().timeRemaining;
-            //Rounds current time to nearest Int
+            // Rounds current time to nearest Int
             int CurrentRoundedTime = Mathf.RoundToInt(CurrentTimeLeft);
 
             AmountOfExtraTime = CurrentRoundedTime;
 
-            Debug.Log("Time Remaining: " + CurrentRoundedTime);
+            Debug.Log("Time Remaining: " + AmountOfExtraTime);
 
-            //Calcs Total Score
-            //For Time
+            // Calcs Total Score
+            // For Time
             TimeScoreBonus = AmountOfExtraTime * TimeBonusPer;
-            //For Bricks
+            // For Bricks
             BrickScoreBonus = BrickAmountPickedUp * BrickBonusPer;
-            //For Secrets
+            // For Secrets
             SecretScoreBonus = SecretAmountFound * SecretBonusPer;
 
-            //Total Score Calculation
+            // Total Score Calculation
             TotalScoreBonus = TimeScoreBonus + BrickScoreBonus + SecretScoreBonus;
 
             IncreaseScore(TotalScoreBonus);
 
-            //Pauses the game
+            // Pauses the game
             PauseMenu.Instance.PauseGame(true);
 
-            //Activates the score screen
+            // Activates the score screen
             ScoreScreenRef.SetActive(true);
 
-            //Deactivates unnecessary UI
+            // Deactivates unnecessary UI
             HUDClutter.SetActive(false);
+
+            // Gets current Score Values
+            // This isn't an update, so using GetComponent isn't that bad
+            this.GetComponent<AnimScore>().GetScoreValues();
+
 
 
             ///DISABLED FOR NOW, WILL CHANGE LATER///
