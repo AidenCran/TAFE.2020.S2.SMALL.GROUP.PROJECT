@@ -168,6 +168,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: afaf0cee1596d5b45b13ca94a7b577fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentEnemyHealth: 1
+  EnemyScore: 100
+  EnemyRef: {fileID: 1066464110062232532}
 --- !u!136 &2169086099645397404
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -269,6 +272,12 @@ PrefabInstance:
 --- !u!4 &3086628418813217299 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 539237474221511195, guid: 77feae7b4b4127b4fad6d3f6dbc8894a,
+    type: 3}
+  m_PrefabInstance: {fileID: 3291614081683920904}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1066464110062232532 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2549880595887422428, guid: 77feae7b4b4127b4fad6d3f6dbc8894a,
     type: 3}
   m_PrefabInstance: {fileID: 3291614081683920904}
   m_PrefabAsset: {fileID: 0}
