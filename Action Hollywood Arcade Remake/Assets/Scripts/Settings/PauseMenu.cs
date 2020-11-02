@@ -41,6 +41,8 @@ public class PauseMenu : MonoBehaviour
 
     public GameObject PauseMenuRef;
 
+    public GameObject ScoreTextRef;
+
     public GameObject HUDClutter;
 
     public GameObject ScriptHolderRef;
@@ -60,11 +62,13 @@ public class PauseMenu : MonoBehaviour
             if (GamePaused == false)
             {
                 PauseMenuRef.SetActive(true);
+                ScoreTextRef.SetActive(false);
                 PauseGame(true);
             }
             else
             {
                 PauseMenuRef.SetActive(false);
+                ScoreTextRef.SetActive(true);
                 PauseGame(false);
             }
         }
