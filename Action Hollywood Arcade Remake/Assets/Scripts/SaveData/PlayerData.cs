@@ -14,26 +14,31 @@
 
 public class PlayerData
 {
-    //Place the player data here. 
-    //This data is accessable anywhere through directly referencing the PlayerData script.
+    // Place the player data here. 
+    // This data is accessable anywhere through directly referencing the PlayerData script.
+
+    // Defines if the first scene has been loaded.
+    // Does this on start.
+    public bool LoadedFirstScene = false;
     
-    //PlayerName is literally "Null" to check if the player actually wrote anything.
+    // PlayerName is literally "Null" to check if the player actually wrote anything.
     public string playerName = "";
     public int playerScore;
 
-    //References which level the player left off on.
+    // References which level the player left off on.
     public string CurrentLevel;
-    //Current Level Index. 
-    //Defaults to 0. This is checked in the SetCurrentLevel script.
+
+    // Current Level Index. 
+    // Defaults to 0. This is checked in the SetCurrentLevel script.
     public int CurrentLevelIndex = 0;
 
     ///THIS MUST BE UPDATED IF THE BUILD STRUCTURE CHANGES
     ///THIS VARIABLE WONT BE CHANGED OTHERWISE
     public int LevelOneSceneIndex = 5;
 
-    //Keeps track of the highest level the player has gotten to.
-    //Default is 5. It is 5 because the index of scene 1 is 5.
-    //Refer to Docs or SetCurrentLevel.cs / StageSelection for more.
+    // Keeps track of the highest level the player has gotten to.
+    // Default is 5. It is 5 because the index of scene 1 is 5.
+    // Refer to Docs or SetCurrentLevel.cs / StageSelection for more.
     public int HighestLevelAchieved;
 
 }

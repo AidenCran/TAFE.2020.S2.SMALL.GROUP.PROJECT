@@ -504,7 +504,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 121394952}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
@@ -792,7 +792,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 156704929}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
@@ -1407,6 +1407,17 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 1979333357}
         m_MethodName: hide
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1979333358}
+        m_MethodName: PlayerNameCheck
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2277,7 +2288,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -2938,7 +2949,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -4340,6 +4351,17 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1979333358}
+        m_MethodName: PlayerNameCheck
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1826512430
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4864,6 +4886,7 @@ GameObject:
   - component: {fileID: 1979333358}
   - component: {fileID: 1979333360}
   - component: {fileID: 1979333359}
+  - component: {fileID: 1979333361}
   m_Layer: 0
   m_Name: '[Holder] Scripts'
   m_TagString: Untagged
@@ -4912,6 +4935,7 @@ MonoBehaviour:
   ParentReference: {fileID: 200850496}
   StartButtonReference: {fileID: 121394952}
   pd:
+    LoadedFirstScene: 0
     playerName: default
     playerScore: 0
     CurrentLevel: 
@@ -4933,6 +4957,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pd:
+    LoadedFirstScene: 0
     playerName: 
     playerScore: 0
     CurrentLevel: 
@@ -4967,6 +4992,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 134ee3f253d7e574db5ae0d12797cad8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1979333361
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1979333354}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b8f6b7b06221d974eaeb1a8b703b019f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pd:
+    LoadedFirstScene: 0
+    playerName: 
+    playerScore: 0
+    CurrentLevel: 
+    CurrentLevelIndex: 0
+    LevelOneSceneIndex: 5
+    HighestLevelAchieved: 0
 --- !u!1 &2006567699
 GameObject:
   m_ObjectHideFlags: 0

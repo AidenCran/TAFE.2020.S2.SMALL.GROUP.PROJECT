@@ -56,7 +56,7 @@ public class PauseMenu : MonoBehaviour
     /// </summary>
     public void TogglePlayerMenu()
     {
-        //Prevents the player from opening the menu if the game is over
+        // Prevents the player from opening the menu if the game is over
         if (ScriptHolderRef.GetComponent<GameOverCondition>().GameOver == false)
         { 
             if (GamePaused == false)
@@ -76,14 +76,14 @@ public class PauseMenu : MonoBehaviour
 
     public void PauseGame(bool ToggleOnOff)
     {
-        //Disables Player Movement
+        // Disables Player Movement
         PlayerCharacterRef.GetComponent<SimpleGridMovement>().enabled = !ToggleOnOff;
 
-        //Disables Game Time
-        //Invert the bool toggle to disable time
+        // Disables Game Time
+        // Invert the bool toggle to disable time
         TimerScriptRef.GetComponent<GameTime>().enabled = !ToggleOnOff;
 
-        //Deactivates unnecessary UI
+        // Deactivates unnecessary UI
         HUDClutter.SetActive(!ToggleOnOff);
 
         ScriptHolderRef.GetComponent<LensBlur>().EnableBlur(ToggleOnOff);

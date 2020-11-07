@@ -15,7 +15,7 @@ namespace AidensWork
     /// </summary>
     public class EnemyController : MonoBehaviour
     {
-        //Default Should Be 2 or 3
+        // Default Should Be 2 or 3
         public int currentEnemyHealth = 1;
 
         public int EnemyScore = 100;
@@ -32,13 +32,13 @@ namespace AidensWork
 
         public void OnDamageTaken()
         {
-            //If enemy health is 0
+            // If enemy health is 0
             if (currentEnemyHealth <= 0)
             {
-                //Calls function to visually display the increased score and add score to total.
+                // Calls function to visually display the increased score and add score to total.
                 ScoreCalc.Instance.IncreaseScore(EnemyScore);
 
-                //Destroys enemy gameobject
+                // Destroys enemy gameobject
                 Destroy(gameObject);
             }
             else
