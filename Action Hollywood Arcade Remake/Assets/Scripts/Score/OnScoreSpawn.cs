@@ -14,7 +14,7 @@ namespace AidensWork
     /// </summary>
     public class OnScoreSpawn : MonoBehaviour
     {
-        private float IFrameDuration = 3;
+        private float IFrameDuration = 0.5f;
         private string CurrentTag;
 
         private void Start()
