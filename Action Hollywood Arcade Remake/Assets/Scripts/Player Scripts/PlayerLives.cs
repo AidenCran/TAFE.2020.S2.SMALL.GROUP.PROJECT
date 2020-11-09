@@ -55,10 +55,12 @@ namespace AidensWork
         //References Player Materials
         private Renderer playerMesh;
 
+        public GameObject PlayerMeshObj;
+
         private void Start()
         {
             //References the Mesh Renderer
-            playerMesh = PlayerCharacterRef.GetComponentInChildren<SkinnedMeshRenderer>();
+            //playerMesh = PlayerCharacterRef.GetComponentInChildren<SkinnedMeshRenderer>();
         }
 
         private void Update()
@@ -100,7 +102,9 @@ namespace AidensWork
             PlayerCharacterRef.GetComponent<RespawnParticles>().StartRespawnIEnum();
 
             //Deactivates the mesh renderer
-            playerMesh.enabled = false;
+            //playerMesh.enabled = false;
+
+            PlayerMeshObj.SetActive(false);
 
             Debug.Log("Death Sequence Started.");
             Debug.Log("Player Is Invincible");
@@ -108,7 +112,9 @@ namespace AidensWork
             yield return new WaitForSeconds(AnimationTime);
 
             //Deactivates the mesh renderer
-            playerMesh.enabled = true;
+            //playerMesh.enabled = true;
+
+            PlayerMeshObj.SetActive(true);
 
             Debug.Log("Animation Over");
 
@@ -142,9 +148,6 @@ namespace AidensWork
 
             //Resets the player's tag, allowing him to get hit again
             PlayerCharacterRef.tag = "Player";
-
-            //Ends this Coroutine
-            StopCoroutine(IFrames());
         }
 
         /// <summary>
@@ -159,12 +162,14 @@ namespace AidensWork
             while (ShowInvincibility == true)
             {
                 //Deactivates the mesh renderer
-                playerMesh.enabled = false;
+                //playerMesh.enabled = false;
+                PlayerMeshObj.SetActive(false);
 
                 yield return new WaitForSeconds(TimeToWait);
 
                 //Reactivates the mesh renderer
-                playerMesh.enabled = true;
+                //playerMesh.enabled = true;
+                PlayerMeshObj.SetActive(true);
 
                 yield return new WaitForSeconds(TimeToWait);
             }

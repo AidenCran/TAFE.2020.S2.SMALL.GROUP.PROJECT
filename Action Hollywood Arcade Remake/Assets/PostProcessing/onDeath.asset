@@ -103,13 +103,13 @@ MonoBehaviour:
     overrideState: 0
     value: 100
   lift:
-    overrideState: 1
+    overrideState: 0
     value: {x: 1, y: 1, z: 1, w: 0}
   gamma:
-    overrideState: 1
+    overrideState: 0
     value: {x: 0.9957555, y: 0.991511, z: 1, w: 0}
   gain:
-    overrideState: 1
+    overrideState: 0
     value: {x: 1, y: 1, z: 1, w: 0}
   masterCurve:
     overrideState: 0
@@ -895,6 +895,24 @@ MonoBehaviour:
         serializedVersion: 2
         m_Curve:
         - serializedVersion: 3
+          time: 0.13649026
+          value: 0.9882353
+          inSlope: Infinity
+          outSlope: Infinity
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        - serializedVersion: 3
+          time: 0.3593315
+          value: 0
+          inSlope: NaN
+          outSlope: NaN
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        - serializedVersion: 3
           time: 0.5821727
           value: 0
           inSlope: 0
@@ -922,7 +940,7 @@ MonoBehaviour:
           inWeight: 0
           outWeight: 0
         - serializedVersion: 3
-          time: 0.91922003
+          time: 0.9331476
           value: 0
           inSlope: -Infinity
           outSlope: -Infinity
@@ -937,52 +955,52 @@ MonoBehaviour:
       m_ZeroValue: 0.5
       m_Range: 1
       cachedData:
-      - NaN
-      - NaN
-      - NaN
-      - NaN
-      - NaN
-      - NaN
-      - NaN
-      - NaN
-      - NaN
-      - NaN
-      - NaN
-      - NaN
-      - NaN
-      - NaN
-      - NaN
-      - NaN
-      - NaN
-      - NaN
-      - NaN
-      - NaN
-      - NaN
-      - NaN
-      - NaN
-      - NaN
-      - NaN
-      - NaN
-      - NaN
-      - NaN
-      - NaN
-      - NaN
-      - NaN
-      - NaN
-      - NaN
-      - NaN
-      - NaN
-      - NaN
-      - NaN
-      - NaN
-      - NaN
-      - NaN
-      - NaN
-      - NaN
-      - NaN
-      - NaN
-      - NaN
-      - NaN
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0.9882353
+      - 0.9882353
+      - 0.9882353
+      - 0.9882353
+      - 0.9882353
+      - 0.9882353
+      - 0.9882353
+      - 0.9882353
+      - 0.9882353
+      - 0.9882353
+      - 0.9882353
+      - 0.9882353
+      - 0.9882353
+      - 0.9882353
+      - 0.9882353
+      - 0.9882353
+      - 0.9882353
+      - 0.9882353
+      - 0.9882353
+      - 0.9882353
+      - 0.9882353
+      - 0.9882353
+      - 0.9882353
+      - 0.9882353
+      - 0.9882353
+      - 0.9882353
+      - 0.9882353
+      - 0.9882353
       - NaN
       - NaN
       - NaN
@@ -1055,16 +1073,16 @@ MonoBehaviour:
       - 1
       - 1
       - 1
-      - NaN
-      - NaN
-      - NaN
-      - NaN
-      - NaN
-      - NaN
-      - NaN
-      - NaN
-      - NaN
-      - NaN
+      - 1
+      - 1
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
   satVsSatCurve:
     overrideState: 0
     value:
