@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 1267273380334891320}
   - component: {fileID: 4058038661301792945}
   - component: {fileID: 6347639548846686210}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Plane
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -266,7 +266,7 @@ GameObject:
   - component: {fileID: 6744938641240370216}
   - component: {fileID: 3083525395364592532}
   - component: {fileID: 8967693505197020091}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: CornerWall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -442,6 +442,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 0c662b1a9599baf4b8df5c65fd36c541,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0c662b1a9599baf4b8df5c65fd36c541, type: 3}

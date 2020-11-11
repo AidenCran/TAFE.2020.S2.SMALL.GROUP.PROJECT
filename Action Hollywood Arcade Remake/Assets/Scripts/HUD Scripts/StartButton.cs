@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using System.IO;
+using AidensWork;
 
 /// <summary>
 /// Author: Aiden Cran
@@ -54,9 +55,8 @@ public class StartButton : MonoBehaviour
         //Else the Directory is rebuilt and the player is prompted to set a name
         if (!string.IsNullOrWhiteSpace(pd.playerName) && File.Exists(fullPath))
         {
-            //Change Scene
-            StageSelection.SetActive(true);
-            StartMenu.SetActive(false);
+            // Changes Scene to Stage Selection
+            this.GetComponent<GameNavigation>().ChangeScene("Stage Selection");
         }
         else
         {

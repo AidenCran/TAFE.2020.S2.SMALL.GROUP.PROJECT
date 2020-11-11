@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 4126605371055171258}
   - component: {fileID: 5663220079739615829}
   - component: {fileID: 7058487681608516661}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: MidWall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -125,7 +125,7 @@ GameObject:
   - component: {fileID: 2404988589635502204}
   - component: {fileID: 902276282915256442}
   - component: {fileID: 1499656492459605799}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Plane
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -293,6 +293,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 1477179501b24454b9a9e6c0cfe3d92e,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1477179501b24454b9a9e6c0cfe3d92e, type: 3}

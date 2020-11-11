@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 102224630367875275}
   - component: {fileID: 4521896466971154806}
   - component: {fileID: 8661543951686655890}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: EndWall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -125,7 +125,7 @@ GameObject:
   - component: {fileID: 6892429884693668127}
   - component: {fileID: 6516765020871714003}
   - component: {fileID: 3518312924530862826}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Quad
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -293,6 +293,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 45c9b32b662232e4ab4fe341dad7600b,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 45c9b32b662232e4ab4fe341dad7600b, type: 3}

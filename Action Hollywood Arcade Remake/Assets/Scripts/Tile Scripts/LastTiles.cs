@@ -24,11 +24,6 @@ namespace AidensWork
                 {
                     //Change Material / Add animation / Whatever I end up putting here
                     LevelTileReference[i].GetComponent<Renderer>().material.SetColor("_Color", Color.red);
-
-                    //Starts the particle system
-                    //LevelTileReference[i].GetComponentInChildren<ParticleSystem>().Play();
-
-                    Debug.Log("Last Few Tiles. Go Get Em'");
                 }
             }
         }

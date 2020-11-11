@@ -15,21 +15,18 @@ EditorBuildSettings:
     path: Assets/Scenes/Menus/LoseScene.unity
     guid: a90e839cb2301cf46bc676452d717ae3
   - enabled: 1
-    path: Assets/Scenes/Menus/ScoreBoardScene.unity
-    guid: 7942d844c93bf7f4aade1c1d81cf9423
-  - enabled: 1
     path: Assets/Scenes/Menus/Settings.unity
     guid: 1eb048c85ef61404c93a63464febe8c3
+  - enabled: 1
+    path: Assets/Scenes/Menus/Stage Selection.unity
+    guid: 4c1dfb05bbea2124588099f681c779bd
   - enabled: 1
     path: Assets/Scenes/InGame/Level 1.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
   - enabled: 1
     path: Assets/Scenes/InGame/Level 2.unity
-    guid: 04471e6907f75004bbce2b0007777405
+    guid: f1eaad85376eebe459502f13ab5e4801
   - enabled: 1
     path: Assets/Scenes/InGame/Level 3.unity
-    guid: 574dbc3f74eb0d143a1a4ad69af8d966
-  - enabled: 1
-    path: Assets/Scenes/InGame/Level 4.unity
-    guid: 41d29495cf6e1e14987d36a703784f21
+    guid: 3eb805559eac323468490921ef6245ab
   m_configObjects: {}

@@ -34,11 +34,15 @@ namespace AidensWork
 
         #endregion
 
+        [Tooltip ("Amount of Tiles Remaing Duh")]
         public int TilesRemaining;
+
+        [Tooltip ("Amount of tiles left before the Last Tiles script is triggered.")]
         public int TileThreshold = 5;
+
+        [Tooltip("Determines if Last Tiles has been triggered")]
         public bool lastTiles;
 
-        // Update is called once per frame
         void Update()
         {
             if (TilesRemaining < TileThreshold && lastTiles == false)

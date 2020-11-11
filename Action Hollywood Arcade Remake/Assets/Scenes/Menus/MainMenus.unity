@@ -5012,6 +5012,7 @@ MonoBehaviour:
     CurrentLevelIndex: 0
     LevelOneSceneIndex: 5
     HighestLevelAchieved: 0
+  Events: {fileID: 386528952}
 --- !u!1 &2006567699
 GameObject:
   m_ObjectHideFlags: 0
